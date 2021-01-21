@@ -49,6 +49,12 @@ namespace PerformanceAppraisal.Entities.model
                     .HasColumnName("createdate")
                     .HasColumnType("datetime");
 
+                entity.Property(e => e.Email)
+                    .HasColumnName("email")
+                    .HasColumnType("varchar(200)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
                 entity.Property(e => e.Loginname)
                     .HasColumnName("loginname")
                     .HasColumnType("varchar(50)")

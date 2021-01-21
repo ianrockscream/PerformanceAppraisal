@@ -1,11 +1,11 @@
 ﻿@using X.PagedList.Mvc.Core;
-@model X.PagedList.IPagedList<PerformanceAppraisal.Entities.model.Department>
+@model X.PagedList.IPagedList<PerformanceAppraisal.Entities.model.Admin>
 <table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
     <thead>
         <tr role="row">
-            <th title="Field #1">Department Id</th>
-            <th title="Field #2">Department Name</th>
-            <th title="Field #3">Description</th>
+            <th title="Field #1">Admin Id</th>
+            <th title="Field #2">Admin Name</th>
+            <th title="Field #3">Login Name</th>
             <th title="Field #4">Create Date</th>
             <th title="Field #5">Update Date</th>
             <th title="Field #6">Action</th>
@@ -19,18 +19,15 @@
             {
                 <tr role="row" class="odd">
                     <td>@item.Id</td>
-                    @*<td>@item.Name</td>*@
-                    <td>
-                        <a href="@Url.Action("View","Department", new { Id = item.Id})">@item.Name</a>
-                    </td>
-                    <td>@item.Description</td>
+                    <td>@item.Name</td>
+                    <td>@item.Loginname</td>
                     <td>@item.Createdate</td>
                     <td>@item.Updatedate</td>
                     <td nowrap>
-                        <a href="@Url.Action("Edit","Department", new { Id = item.Id})" class="btn btn-sm btn-clean btn-icon" title="Edit details">
+                        <a href="@Url.Action("Edit","Admin", new { Id = item.Id})" class="btn btn-sm btn-clean btn-icon" title="Edit details">
                             <i class="la la-edit"></i>
                         </a>
-                        <a href="@Url.Action("Delete","Department", new { Id = item.Id})" class="btn btn-sm btn-clean btn-icon" title="Delete">
+                        <a href="@Url.Action("Delete","Admin", new { Id = item.Id})" class="btn btn-sm btn-clean btn-icon" title="Delete">
                             <i class="la la-trash"></i>
                         </a>
                     </td>
@@ -40,18 +37,15 @@
             {
                 <tr role="row" class="even">
                     <td>@item.Id</td>
-                    @*<td>@item.Name</td>*@
-                    <td>
-                        <a href="@Url.Action("View","Department", new { Id = item.Id})">@item.Name</a>
-                    </td>
-                    <td>@item.Description</td>
+                    <td>@item.Name</td>
+                    <td>@item.Loginname</td>
                     <td>@item.Createdate</td>
                     <td>@item.Updatedate</td>
                     <td nowrap>
-                        <a href="@Url.Action("Edit","Department", new { Id = item.Id})" class="btn btn-sm btn-clean btn-icon" title="Edit details">
+                        <a href="@Url.Action("Edit","Admin", new { Id = item.Id})" class="btn btn-sm btn-clean btn-icon" title="Edit details">
                             <i class="la la-edit"></i>
                         </a>
-                        <a href="@Url.Action("Delete","Department", new { Id = item.Id})" class="btn btn-sm btn-clean btn-icon" title="Delete">
+                        <a href="@Url.Action("Delete","Admin", new { Id = item.Id})" class="btn btn-sm btn-clean btn-icon" title="Delete">
                             <i class="la la-trash"></i>
                         </a>
                     </td>

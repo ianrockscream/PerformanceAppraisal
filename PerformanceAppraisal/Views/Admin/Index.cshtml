@@ -1,10 +1,6 @@
 ﻿@{
-    ViewData["Title"] = "View Department";
-    Layout = "~/Views/Shared/_MainLayout.cshtml";
+    ViewData["Title"] = "Manage Administrator";
 }
-
-@model PerformanceAppraisal.Entities.model.Department
-
 <style>
     .dataTables_wrapper .dataTables_paginate .pagination .page-item.active > a {
         -webkit-transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, -webkit-box-shadow 0.15s ease;
@@ -74,38 +70,12 @@
         border: 1px solid #E4E6EF;
     }
 </style>
-
-<div class="card card-custom gutter-b">
-    <div class="card-body">
-        <div class="form-group row">
-            <label class="col-xl-6 col-lg-6 col-form-label text-right font-weight-bold">Departemen (Department) : </label>
-            <label class="col-xl-6 col-lg-6 d-none d-lg-block col-form-label">@Model.Name</label>
-            <label class="col-xl-6 col-lg-6 d-sm-none col-form-label text-right">@Model.Name</label>
-        </div>
-        <div class="form-group row">
-            <label class="col-xl-6 col-lg-6 col-form-label text-right font-weight-bold">Deskripsi (Description) : </label>
-            <label class="col-xl-6 col-lg-6 d-none d-lg-block col-form-label">@Model.Description</label>
-            <label class="col-xl-6 col-lg-6 d-sm-none col-form-label text-right">@Model.Description</label>
-        </div>
-        <div class="form-group row">
-            <label class="col-xl-6 col-lg-6 col-form-label text-right font-weight-bold">Dibuat (Create Date) : </label>
-            <label class="col-xl-6 col-lg-6 d-none d-lg-block col-form-label">@Model.Createdate</label>
-            <label class="col-xl-6 col-lg-6 d-sm-none col-form-label text-right">@Model.Createdate</label>
-        </div>
-        <div class="form-group row">
-            <label class="col-xl-6 col-lg-6 col-form-label text-right font-weight-bold">Pembaharuan (Update Date) : </label>
-            <label class="col-xl-6 col-lg-6 d-none d-lg-block col-form-label">@Model.Updatedate</label>
-            <label class="col-xl-6 col-lg-6 d-sm-none col-form-label text-right">@Model.Updatedate</label>
-        </div>
-    </div>
-</div>
-
 <div class="card card-custom">
     <div class="card-header flex-wrap border-0 pt-6 pb-0">
         <div class="card-title">
             <h3 class="card-label">
-                Sub Departments
-                <span class="d-block text-muted pt-2 font-size-sm">Sub Department registered on system</span>
+                Administrator
+                <span class="d-block text-muted pt-2 font-size-sm">Administrator registered on system</span>
             </h3>
         </div>
         <div class="card-toolbar">
@@ -122,11 +92,52 @@
                         </svg><!--end::Svg Icon-->
                     </span>		Export
                 </button>
-                @await Html.PartialAsync("_DropDownExportTable")
+
+                <!--begin::Dropdown Menu-->
+                <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
+                    <!--begin::Navigation-->
+                    <ul class="navi flex-column navi-hover py-2">
+                        <li class="navi-header font-weight-bolder text-uppercase font-size-sm text-primary pb-2">
+                            Choose an option:
+                        </li>
+                        <li class="navi-item">
+                            <a href="#" class="navi-link">
+                                <span class="navi-icon"><i class="la la-print"></i></span>
+                                <span class="navi-text">Print</span>
+                            </a>
+                        </li>
+                        <li class="navi-item">
+                            <a href="#" class="navi-link">
+                                <span class="navi-icon"><i class="la la-copy"></i></span>
+                                <span class="navi-text">Copy</span>
+                            </a>
+                        </li>
+                        <li class="navi-item">
+                            <a href="#" class="navi-link">
+                                <span class="navi-icon"><i class="la la-file-excel-o"></i></span>
+                                <span class="navi-text">Excel</span>
+                            </a>
+                        </li>
+                        <li class="navi-item">
+                            <a href="#" class="navi-link">
+                                <span class="navi-icon"><i class="la la-file-text-o"></i></span>
+                                <span class="navi-text">CSV</span>
+                            </a>
+                        </li>
+                        <li class="navi-item">
+                            <a href="#" class="navi-link">
+                                <span class="navi-icon"><i class="la la-file-pdf-o"></i></span>
+                                <span class="navi-text">PDF</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--end::Navigation-->
+                </div>
+                <!--end::Dropdown Menu-->
             </div>
             <!--end::Dropdown-->
             <!--begin::Button-->
-            <a href="@Url.Action("Register","Department")" class="btn btn-primary font-weight-bolder">
+            <a href="@Url.Action("Register","Admin")" class="btn btn-primary font-weight-bolder">
                 <span class="svg-icon svg-icon-md">
                     <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Flatten.svg--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
                         <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -165,9 +176,28 @@
         <!--end::Search Form-->
         <!--end: Search Form-->
         <!--begin: Datatable-->
-        <div id="subdepartmentGrid">
-            @await Component.InvokeAsync("Subdepartment", new { departmentId = Model.Id.ToString()})
+        <div id="adminGrid">
+            @await Component.InvokeAsync("Admin")
         </div>
         <!--end: Datatable-->
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        $('#pageSize').change(function () {
+            this.form.submit();
+        });
+
+    });
+
+    function gridView() {
+        var pageSize = $('#pageSize').val();
+        var name = escape($('#name').val());
+        var email = escape($('#email').val());
+        var phone = $('#phone').val();
+        $("#participantGrid").load('@Url.Action("PartisipanGrid", "Partisipan")' + '?name=' + name + '&email=' + email + '&phone=' + phone + '&pageSize=' + pageSize);
+        //$("#loading").show();
+    };
+
+</script>
+@Html.Raw(TempData["alert"])

@@ -9,6 +9,7 @@ namespace PerformanceAppraisal.Entities.model
         public string Name { get; set; }
         public string Password { get; set; }
         public string Loginname { get; set; }
+        public string Email { get; set; }
         public DateTime? Createdate { get; set; }
         public DateTime? Updatedate { get; set; }
     }

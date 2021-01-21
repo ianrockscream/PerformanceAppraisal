@@ -53,8 +53,24 @@ namespace PerformanceAppraisal.Controllers
             }
             else
             {
-                TempData["alert"] = Helper.Alert("NIK atau password salah.");
-                return View(model);
+                AdminRepository adminRepo = new AdminRepository();
+                Admin admin = adminRepo.GetAdminByLoginNameAndPassword(model.NIK, Helper.HashSha256(model.Password));
+                if(admin == null)
+                {
+                    TempData["alert"] = Helper.Alert("NIK atau password salah.");
+                    return View(model);
+                }
+                else
+                {
+                    EmployeeSessionModel esm = new EmployeeSessionModel();
+                    esm.Name = admin.Name;
+                    esm.NIK = admin.Loginname;
+                    esm.Position = "Administrator";
+                    esm.EmployeeId = admin.Id.ToString();
+                    esm.Email = admin.Email;
+                    esm.isAdministrator = true;
+                    return RedirectToAction("Index", "Home");
+                }
             }
         }
         

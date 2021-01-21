@@ -9,18 +9,18 @@ using X.PagedList;
 
 namespace PerformanceAppraisal.ViewComponents
 {
-    public class SubdepartmentViewComponents : ViewComponent
+    public class AdminVIewComponent : ViewComponent
     {
         public IViewComponentResult Invoke(int page = 1, int pageSize = 20)
         {
-            SubDeparmentRepository subdepartmentRepo = new SubDeparmentRepository();
-            List<Subdepartment> subdepartments = subdepartmentRepo.GetSubdepartments();
-            IPagedList<Subdepartment> subdepartmentPaged = subdepartments.OrderBy(x => x.Name).ToPagedList(page, pageSize);
+            AdminRepository adminRepo = new AdminRepository();
+            List<Admin> admins = adminRepo.GetAdmins();
+            IPagedList<Admin> adminPaged = admins.OrderBy(x => x.Name).ToPagedList(page, pageSize);
             int ps = page * pageSize;
-            int datacount = subdepartments.Count();
+            int datacount = admins.Count();
             ViewBag.showEntriesLabel = "Showing " + ((page == 1 ? 1 : ((page - 1) * pageSize) + 1)) + " to " + (ps > datacount ? datacount : ps) + " of " + datacount + " entries.";
 
-            return View(subdepartmentPaged);
+            return View(adminPaged);
         }
     }
 }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PerformanceAppraisal.Entities.model;
+using PerformanceAppraisal.Repository.Repo;
 
 namespace PerformanceAppraisal.Controllers
 {
@@ -22,7 +24,12 @@ namespace PerformanceAppraisal.Controllers
         }
         public IActionResult View(int Id)
         {
-            return View();
+            DepartmentRepository departmentRepository = new DepartmentRepository();
+            Department department = departmentRepository.GetDepartmentById(Id);
+            if (department != null)
+                return View(department);
+            else
+                return RedirectToAction("Index");
         }
     }
 }

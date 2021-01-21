@@ -7,40 +7,34 @@
 <div class="card card-custom gutter-b">
     <div class="card-body">
         <div class="form-group row">
-            <div class="col-3"></div>
-            <span class="col-3 font-weight-bold text-md-right text-right">Nama Karyawan (Employee Name) :</span>
-            <span class="col-2 text-muted text-left">@Model.Name</span>
-            <div class="col-4"></div>
+            <label class="col-xl-6 col-lg-6 col-form-label text-right font-weight-bold">Nama Karyawan (Employee Name) : </label>
+            <label class="col-xl-6 col-lg-6 d-none d-lg-block col-form-label">@Model.Name</label>
+            <label class="col-xl-6 col-lg-6 d-sm-none col-form-label text-right">@Model.Name</label>
         </div>
         <div class="form-group row">
-            <div class="col-3"></div>
-            <label class="col-3 font-weight-bold text-right">NIK (Employee ID) :</label>
-            <label class="col-2 text-muted text-left">@Model.NIK</label>
-            <div class="col-4"></div>
+            <label class="col-xl-6 col-lg-6 col-form-label text-right font-weight-bold">NIK (Employee ID) : </label>
+            <label class="col-xl-6 col-lg-6 d-none d-lg-block col-form-label">@Model.NIK</label>
+            <label class="col-xl-6 col-lg-6 d-sm-none col-form-label text-right">@Model.NIK</label>
         </div>
         <div class="form-group row">
-            <div class="col-3"></div>
-            <label class="col-3 font-weight-bold text-right">Jabatan (Position) :</label>
-            <label class="col-2 text-muted text-left">@Model.Position</label>
-            <div class="col-4"></div>
+            <label class="col-xl-6 col-lg-6 col-form-label text-right font-weight-bold">Jabatan (Position) : </label>
+            <label class="col-xl-6 col-lg-6 d-none d-lg-block col-form-label">@Model.Position</label>
+            <label class="col-xl-6 col-lg-6 d-sm-none col-form-label text-right">@Model.Position</label>
         </div>
         <div class="form-group row">
-            <div class="col-3"></div>
-            <label class="col-3 font-weight-bold text-right">Departemen (Department) :</label>
-            <label class="col-2 text-muted text-left">@Model.Department</label>
-            <div class="col-4"></div>
+            <label class="col-xl-6 col-lg-6 col-form-label text-right font-weight-bold">Departemen (Department) : </label>
+            <label class="col-xl-6 col-lg-6 d-none d-lg-block col-form-label">@Model.Department</label>
+            <label class="col-xl-6 col-lg-6 d-sm-none col-form-label text-right">@Model.Department</label>
         </div>
         <div class="form-group row">
-            <div class="col-3"></div>
-            <label class="col-3 font-weight-bold text-right">Nama Atasan (Line Manager's Name) :</label>
-            <label class="col-2 text-muted text-left">John Wick</label>
-            <div class="col-4"></div>
+            <label class="col-xl-6 col-lg-6 col-form-label text-right font-weight-bold">Nama Atasan (Line Manager's Name) : </label>
+            <label class="col-xl-6 col-lg-6 d-none d-lg-block col-form-label">John Wick</label>
+            <label class="col-xl-6 col-lg-6 d-sm-none col-form-label text-right">John Wick</label>
         </div>
         <div class="form-group row my-auto">
-            <div class="col-3"></div>
-            <label class="col-3 font-weight-bold text-right">Tanggal Pembuatan (Start Date) :</label>
-            <label class="col-2 text-muted text-left">@DateTime.Now.ToString("dd-MMM-yy")</label>
-            <div class="col-4"></div>
+            <label class="col-xl-6 col-lg-6 col-form-label text-right font-weight-bold">Tanggal Pembuatan (Create Date) : </label>
+            <label class="col-xl-6 col-lg-6 d-none d-lg-block col-form-label">@DateTime.Now;</label>
+            <label class="col-xl-6 col-lg-6 d-sm-none col-form-label text-right">@DateTime.Now</label>
         </div>
     </div>
 </div>

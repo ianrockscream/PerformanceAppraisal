@@ -29,11 +29,23 @@ namespace PerformanceAppraisal.Controllers
                 filterContext.Result = new RedirectToActionResult("Login", "Account", new { returnUrl = HttpContext.Request.Path + HttpContext.Request.QueryString });
                 return;
             }
-            ViewBag.Controller = ControllerContext.RouteData.Values["Controller"];//ViewContext.RouteData.Values["Controller"].ToString();
-            ViewBag.employeeName = ESM.Name;
-            ViewBag.email = ESM.Email;
-            ViewBag.position = ESM.Position + " " + ESM.Department + " " + ESM.SubDepartment;
-            ViewBag.employeeId = ESM.EmployeeId;
+            if(!ESM.isAdministrator)
+            {
+                ViewBag.Controller = ControllerContext.RouteData.Values["Controller"];//ViewContext.RouteData.Values["Controller"].ToString();
+                ViewBag.employeeName = ESM.Name;
+                ViewBag.email = ESM.Email;
+                ViewBag.position = ESM.Position + " " + ESM.Department + " " + ESM.SubDepartment;
+                ViewBag.employeeId = ESM.EmployeeId;
+            }
+            else
+            {
+                ViewBag.Controller = ControllerContext.RouteData.Values["Controller"];//ViewContext.RouteData.Values["Controller"].ToString();
+                ViewBag.employeeName = ESM.Name;
+                ViewBag.email = ESM.Email;
+                ViewBag.position = ESM.Position;
+                ViewBag.employeeId = ESM.EmployeeId;
+                ViewBag.isAdministrator = true;
+            }
             base.OnActionExecuting(filterContext);            
         }
     }
