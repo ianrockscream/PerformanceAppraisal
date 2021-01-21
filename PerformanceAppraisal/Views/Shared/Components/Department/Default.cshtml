@@ -1,0 +1,74 @@
+﻿@using X.PagedList.Mvc.Core;
+@model X.PagedList.IPagedList<PerformanceAppraisal.Entities.model.Department>
+<table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
+    <thead>
+        <tr role="row">
+            <th title="Field #1">Department Id</th>
+            <th title="Field #2">Department Name</th>
+            <th title="Field #3">Description</th>
+            <th title="Field #4">Create Date</th>
+            <th title="Field #5">Update Date</th>
+            <th title="Field #6">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int row = Model.Count; int rowCount = 0;}
+        @foreach (var item in Model)
+        {
+            if (rowCount % 2 == 0)
+            {
+                <tr role="row" class="odd">
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Createdate</td>
+                    <td>@item.Updatedate</td>
+                    <td nowrap>
+                        <a href="@Url.Action("Edit","Department", new { Id = item.Id})" class="btn btn-sm btn-clean btn-icon" title="Edit details">
+                            <i class="la la-edit"></i>
+                        </a>
+                        <a href="@Url.Action("Delete","Department", new { Id = item.Id})" class="btn btn-sm btn-clean btn-icon" title="Delete">
+                            <i class="la la-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr role="row" class="even">
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Description</td>
+                    <td>@item.Createdate</td>
+                    <td>@item.Updatedate</td>
+                    <td nowrap>
+                        <a href="@Url.Action("Edit","Department", new { Id = item.Id})" class="btn btn-sm btn-clean btn-icon" title="Edit details">
+                            <i class="la la-edit"></i>
+                        </a>
+                        <a href="@Url.Action("Delete","Department", new { Id = item.Id})" class="btn btn-sm btn-clean btn-icon" title="Delete">
+                            <i class="la la-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+            { rowCount++; }
+        }
+    </tbody>
+</table>
+
+<script src="~/assets/js/pages/crud/ktdatatable/base/html-table.js?v=7.0.6"></script>
+<script>
+
+    $('.pagination').on('click', 'a', function () {
+        $.ajax({
+            url: this.href,
+            type: 'GET',
+            cache: false,
+            success: function (result) {
+                $('#participanttGrid').html(result);
+                //bind();
+            }
+        });
+        return false;
+    });
+</script>

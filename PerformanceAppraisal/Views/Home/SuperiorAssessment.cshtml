@@ -1,0 +1,854 @@
+﻿@{
+    ViewData["Title"] = "Superior Assessment";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@model PerformanceAppraisal.Repository.Models.EmployeeSessionModel
+<div class="card card-custom gutter-b">
+    <div class="card-body">
+        <div class="form-group row">
+            <div class="col-3"></div>
+            <span class="col-3 font-weight-bold text-md-right text-right">Nama Karyawan (Employee Name) :</span>
+            <span class="col-2 text-muted text-left">@Model.Name</span>
+            <div class="col-4"></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3"></div>
+            <label class="col-3 font-weight-bold text-right">NIK (Employee ID) :</label>
+            <label class="col-2 text-muted text-left">@Model.NIK</label>
+            <div class="col-4"></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3"></div>
+            <label class="col-3 font-weight-bold text-right">Jabatan (Position) :</label>
+            <label class="col-2 text-muted text-left">@Model.Position</label>
+            <div class="col-4"></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3"></div>
+            <label class="col-3 font-weight-bold text-right">Departemen (Department) :</label>
+            <label class="col-2 text-muted text-left">@Model.Department</label>
+            <div class="col-4"></div>
+        </div>
+        <div class="form-group row">
+            <div class="col-3"></div>
+            <label class="col-3 font-weight-bold text-right">Nama Atasan (Line Manager's Name) :</label>
+            <label class="col-2 text-muted text-left">John Wick</label>
+            <div class="col-4"></div>
+        </div>
+        <div class="form-group row my-auto">
+            <div class="col-3"></div>
+            <label class="col-3 font-weight-bold text-right">Tanggal Pembuatan (Start Date) :</label>
+            <label class="col-2 text-muted text-left">@DateTime.Now.ToString("dd-MMM-yy")</label>
+            <div class="col-4"></div>
+        </div>
+    </div>
+</div>
+
+<div class="card card-custom gutter-b">
+    <!--begin::Header-->
+    <div class="card-header border-0 py-5">
+        <h3 class="card-title align-items-start flex-column">
+            <span class="card-label font-weight-bolder text-dark">Business Goals</span>
+            <span class="text-muted mt-3 font-weight-bold font-size-sm">Description here..</span>
+        </h3>
+
+    </div>
+    <!--end::Header-->
+    <!--begin::Body-->
+    <div class="card-body py-0">
+        <!--begin::Table-->
+        <div class="table-responsive">
+            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
+                <thead>
+                    <tr class="text-left">
+                        <th class="pl-0" style="min-width:150px">Business Goals</th>
+                        <th class="pr-0" style="min-width: 80px">Weight(%)</th>
+                        <th style="min-width: 200px">Goal Achievement</th>
+                        <th class="pr-0">Self Assessment</th>
+                        <th>Managers Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="pl-0">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Ensure Revenue in company Up by 20 %
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="weight">20</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Revenue Increased by 20 %
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="score">3</span>
+                            </span>
+                        </td>
+                        <td>
+                            <div class="radio-inline">
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt1" checked="checked" value="1" />
+                                    <span></span>1
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt1" value="2" />
+                                    <span></span>2
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt1" value="3" />
+                                    <span></span>3
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pl-0">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Ensure Employee Engagement Up by 10 %
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="weight">20</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Employee Engagement Increased by 20 %
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="score">3</span>
+                            </span>
+                        </td>
+                        <td>
+                            <div class="radio-inline">
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt2" checked="checked" value="1" />
+                                    <span></span>1
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt2" value="2" />
+                                    <span></span>2
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt2" value="3" />
+                                    <span></span>3
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pl-0">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Ensure Market Expansion by 20 % in 2020
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="weight">40</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Market Expansion Up by 20 %
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="score">3</span>
+                            </span>
+                        </td>
+                        <td>
+                            <div class="radio-inline">
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt3" checked="checked" value="1" />
+                                    <span></span>1
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt3" value="2" />
+                                    <span></span>2
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt3" value="3" />
+                                    <span></span>3
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pl-0">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Increase New Outlet opening in Eastern Indonesia to 250 Outlet in 2020
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="weight">20</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                New Outlet Opened to 300 Outlet in 2020
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="score">3</span>
+                            </span>
+                        </td>
+                        <td>
+                            <div class="radio-inline">
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt4" checked="checked" value="1" />
+                                    <span></span>1
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt4" value="2" />
+                                    <span></span>2
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt4" value="3" />
+                                    <span></span>3
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pl-0">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Total Weight
+                            </span>
+                        </td>
+                        <td>
+                            <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                100
+                            </span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="text-right">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                NILAI AKHIR OBJEKTIF (diisi pada saat year-end review)
+                            </span>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                FINAL SCORE FOR BUSINESS GOALS (To be complete during year-end review)
+                            </span>
+                        </td>
+                        <td>
+                            <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                2.80
+                            </span>
+                        </td>
+                        <td>
+                            <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                Exceed Expectation
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--end::Table-->
+    </div>
+    <!--end::Body-->
+</div>
+
+<div class="card card-custom gutter-b">
+    <!--begin::Header-->
+    <div class="card-header border-0 py-5">
+        <h3 class="card-title align-items-start flex-column">
+            <span class="card-label font-weight-bolder text-dark">Global Attitudes</span>
+            <span class="text-muted mt-3 font-weight-bold font-size-sm">Description here..</span>
+        </h3>
+
+    </div>
+    <!--end::Header-->
+    <!--begin::Body-->
+    <div class="card-body py-0">
+        <!--begin::Table-->
+        <div class="table-responsive">
+            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
+                <thead>
+                    <tr class="text-left">
+                        <th class="pl-0" style="min-width:150px">Global Attitudes</th>
+                        <th class="pr-0" style="min-width: 80px">Weight(%)</th>
+                        <th style="min-width: 200px">Expected Behavior</th>
+                        <th style="min-width: 200px">Demonstrated Behavior</th>
+                        <th class="pr-0">Self Assessment</th>
+                        <th style="min-width:200px;">Managers Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="pl-0">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Simple
+                            </span>
+                            <span class="text-muted">
+                                Mencari cara untuk membuat pekerjaan menjadi lebih sederhana dan efisien
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="weight">20</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Mencari Cara untuk mempersingkat business process
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Mencari Cara untuk mempersingkat business process
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="score">3</span>
+                            </span>
+                        </td>
+                        <td>
+                            <div class="radio-inline">
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt5" checked="checked" value="1" />
+                                    <span></span>1
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt5" value="2" />
+                                    <span></span>2
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt5" value="3" />
+                                    <span></span>3
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pl-0">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Be Bold
+                            </span>
+                            <span class="text-muted">
+                                Membuat suatu hal terjadi, dari ide menjadi tindakan nyata dan mampu membuat keputusan dengan cepat dengan memperhitungkan resikonya
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="weight">20</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Mampu mengambil keputusan dengan tepat
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Mampu mengambil keputusan dengan tepat
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="score">3</span>
+                            </span>
+                        </td>
+                        <td>
+                            <div class="radio-inline">
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt6" checked="checked" value="1" />
+                                    <span></span>1
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt6" value="2" />
+                                    <span></span>2
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt6" value="3" />
+                                    <span></span>3
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pl-0">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Be Dependable
+                            </span>
+                            <span class="text-muted">
+                                Memahami tanggung jawab dengan baik, jujur dengan performa dan terbuka dalam memberikan umpan balik kepada sesama rekan kerja
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="weight">20</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Mampu mengambil keputusan dengan tepat
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Mampu mengambil keputusan dengan tepat
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="score">3</span>
+                            </span>
+                        </td>
+                        <td>
+                            <div class="radio-inline">
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt7" checked="checked" value="1" />
+                                    <span></span>1
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt7" value="2" />
+                                    <span></span>2
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt7" value="3" />
+                                    <span></span>3
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pl-0">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                One Voice
+                            </span>
+                            <span class="text-muted">
+                                Memiliki pola pikir "One VOICE" yang mau berkolaborasi, menghargai perbedaan dalam tim dan mau mendengar sesama rekan kerja
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="weight">20</span>
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Mampu mengambil keputusan dengan tepat
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Mampu mengambil keputusan dengan tepat
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="score">3</span>
+                            </span>
+                        </td>
+                        <td>
+                            <div class="radio-inline">
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt8" checked="checked" value="1" />
+                                    <span></span>1
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt8" value="2" />
+                                    <span></span>2
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt8" value="3" />
+                                    <span></span>3
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pl-0">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Total Weight
+                            </span>
+                        </td>
+                        <td>
+                            <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                100
+                            </span>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-right">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                NILAI AKHIR GLOBAL FLAGSHIP BEHAVIORS (diisi pada saat year-end review)
+                            </span>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                FINAL SCORE FOR GLOBAL FLAGSHIP BEHAVIORS (To be complete during year-end review)
+                            </span>
+                        </td>
+                        <td>
+                            <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                2.80
+                            </span>
+                        </td>
+                        <td>
+                            <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                Exceed Expectation
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--end::Table-->
+    </div>
+    <!--end::Body-->
+</div>
+
+<div class="card card-custom gutter-b">
+    <!--begin::Header-->
+    <div class="card-header border-0 py-5">
+        <h3 class="card-title align-items-start flex-column">
+            <span class="card-label font-weight-bolder text-dark">Nilai Akhir Performa</span>
+            <span class="text-muted mt-3 font-weight-bold font-size-sm">Overall Rating</span>
+        </h3>
+
+    </div>
+    <!--end::Header-->
+    <!--begin::Body-->
+    <div class="card-body py-0">
+        <!--begin::Table-->
+        <div class="table-responsive">
+            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
+                
+                <tbody>
+                    <tr>
+                        <td class="pl-0">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Nilai Angka (Numerical Score)
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="weight">20</span>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pl-0">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Nilai Deskriptif (Descriptive Score)
+                            </span>
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                <span id="weight">Exceed Expectation</span>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--end::Table-->
+    </div>
+    <!--end::Body-->
+</div>
+
+<div class="card card-custom gutter-b">
+    <!--begin::Header-->
+    <div class="card-header border-0 py-5">
+        <h3 class="card-title align-items-start flex-column">
+            <span class="card-label font-weight-bolder text-dark">Status Mobilitas (Mobility Status)</span>
+            <span class="text-muted mt-3 font-weight-bold font-size-sm">(Harap Beri tanda pada box yang tepat, Please tick appropriate box)</span>
+        </h3>
+
+    </div>
+    <!--end::Header-->
+    <!--begin::Body-->
+    <div class="card-body py-0">
+        <!--begin::Table-->
+        <div class="table-responsive">
+            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
+                <thead>
+                    <tr class="text-center">
+                        <th>Siap Ditempatkan Dimana Saja(Mobile)</th>
+                        <th>Siap ditempatkan diberapa lokasi saja(Partially Mobile)</th>
+                        <th>Tidak Siap Dipindah(Not Mobile)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="px-40">
+                            <div class="radio-inline px-20">
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt9" checked="checked" value="1" />
+                                    <span></span>
+                                </label>
+                            </div>
+                        </td>
+                        <td class="px-40">
+                            <div class="radio-inline pl-20">
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt9" checked="checked" value="1" />
+                                    <span></span>
+                                </label>
+                            </div>
+                        </td>
+                        <td class="px-40">
+                            <div class="radio-inline pl-10">
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="rbt9" checked="checked" value="1" />
+                                    <span></span>
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--end::Table-->
+    </div>
+    <!--end::Body-->
+</div>
+
+<div class="card card-custom gutter-b">
+    <!--begin::Header-->
+    <div class="card-header border-0 py-5">
+        <h3 class="card-title align-items-start flex-column">
+            <span class="card-label font-weight-bolder text-dark">Aspirasi Karir</span>
+            <span class="text-muted mt-3 font-weight-bold font-size-sm">(Harap Beri tanda pada box yang tepat, Please tick appropriate box)</span>
+        </h3>
+
+    </div>
+    <!--end::Header-->
+    <!--begin::Body-->
+    <div class="card-body py-0">
+        <!--begin::Table-->
+        <div class="table-responsive">
+            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
+                <thead>
+                    <tr class="text-center">
+                        <th>Departemen(Function/Department)</th>
+                        <th>Subdepartemen(Sub Department)</th>
+                        <th>Komentar(Comments)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <select class="form-control" name="DepartmentId" id="Department" onchange="getsubdeparment();">
+                                @if (ViewBag.department != null)
+                                {
+                                    foreach (var item in ViewBag.department)
+                                    {
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="">No Department</option>
+                                }
+                            </select>
+                        </td>
+                        <td>
+                            <select class="form-control" name="SubDepartmentId" id="Subdeparment">
+                                @if (ViewBag.subdepartment != null)
+                                {
+                                    foreach (var item in ViewBag.subdepartment)
+                                    {
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="">No SubDeparment</option>
+                                }
+                            </select>
+                        </td>
+                        <td>
+                            <textarea class="form-control"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--end::Table-->
+    </div>
+    <!--end::Body-->
+</div>
+
+<div class="card card-custom gutter-b">
+    <!--begin::Header-->
+    <div class="card-header border-0 py-5">
+        <h3 class="card-title align-items-start flex-column">
+            <span class="card-label font-weight-bolder text-dark">Rencana Pengembangan Diri(Development Plan)</span>
+            <span class="text-muted mt-3 font-weight-bold font-size-sm">Description here..</span>
+        </h3>
+
+    </div>
+    <!--end::Header-->
+    <!--begin::Body-->
+    <div class="card-body py-0">
+        <!--begin::Table-->
+        <div class="table-responsive">
+            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">                
+                <tbody>
+                    <tr>
+                        <td class="pl-0 max-w-100px">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Rencana Pengembangan Diri
+                            </span>
+                            <span class="text-muted">
+                                Development Plan
+                            </span>
+                        </td>
+                        <td>
+                            <textarea class="form-control"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pl-0 max-w-100px">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Metode yang digunakan
+                            </span>
+                            <span class="text-muted">
+                                Methods
+                            </span>
+                        </td>
+                        <td>
+                            <textarea class="form-control"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pl-0 max-w-100px">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Kelebihan Karyawan(Strength Area)
+                            </span>
+                            <span class="text-muted">
+                                Informasi ini diberikan oleh atasan pada saat penilaian akhir (Information provided by manager in year-end review stage)
+                            </span>
+                        </td>
+                        <td>
+                            <textarea class="form-control"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pl-0 max-w-100px">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Area yang perlu dikembangkan (Development Area)
+                            </span>
+                            <span class="text-muted">
+                                Informasi ini diberikan oleh atasan pada saat penilaian akhir (Information provided by manager in year-end review stage)
+                            </span>
+                        </td>
+                        <td>
+                            <textarea class="form-control"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--end::Table-->
+    </div>
+    <!--end::Body-->
+</div>
+
+<div class="card card-custom gutter-b">
+    <!--begin::Header-->
+    <div class="card-header border-0 py-5">
+        <h3 class="card-title align-items-start flex-column">
+            <span class="card-label font-weight-bolder text-dark">Komentar Akhir</span>
+            <span class="text-muted mt-3 font-weight-bold font-size-sm">Description here..</span>
+        </h3>
+
+    </div>
+    <!--end::Header-->
+    <!--begin::Body-->
+    <div class="card-body py-0">
+        <!--begin::Table-->
+        <div class="table-responsive">
+            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
+                <thead>
+                    <tr class="text-center">
+                        <th></th>
+                        <th>Karyawan(Employee)</th>
+                        <th>Atasan(Manager)</th>
+                        <th>Atasan dari atasan langsung (2nd Level Manager)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="pl-0 max-w-150px">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Komentar Akhir(Final Comments)
+                            </span>
+                        </td>
+                        <td>
+                            <textarea class="form-control"></textarea>
+                        </td>
+                        <td>
+                            <textarea class="form-control"></textarea>
+                        </td>
+                        <td>
+                            <textarea class="form-control"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pl-0 max-w-150px">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Tanda Tangan (Signature)
+                            </span>
+                        </td>
+                        <td>
+                            <textarea class="form-control"></textarea>
+                        </td>
+                        <td>
+                            <textarea class="form-control"></textarea>
+                        </td>
+                        <td>
+                            <textarea class="form-control"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pl-0 max-w-150px">
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                Tanda Tangan Persetujuan Penilaian Akhir (Year End Review Signature)
+                            </span>
+                        </td>
+                        <td>
+                            <textarea class="form-control"></textarea>
+                        </td>
+                        <td>
+                            <textarea class="form-control"></textarea>
+                        </td>
+                        <td>
+                            <textarea class="form-control"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--end::Table-->
+    </div>
+    <!--end::Body-->
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <button type="submit" class="btn btn-primary mr-2">Save</button>
+        <button type="reset" class="btn btn-danger">Clear</button>
+    </div>
+</div>

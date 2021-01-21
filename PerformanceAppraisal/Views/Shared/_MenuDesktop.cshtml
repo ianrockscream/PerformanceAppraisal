@@ -1,0 +1,69 @@
+﻿<ul class="header-tabs nav align-self-end font-size-lg" role="tablist">
+    <!--begin::Item-->
+    <li class="nav-item">
+        @if(ViewBag.Controller == "Home")
+        {            
+            <a href="#" class="nav-link py-4 px-6 active" data-toggle="tab" data-target="#kt_header_tab_1" role="tab">
+                Home
+            </a>
+        }
+        else
+        {            
+            <a href="#" class="nav-link py-4 px-6" data-toggle="tab" data-target="#kt_header_tab_1" role="tab">
+                Home
+            </a>
+        }
+    </li>
+    <!--end::Item-->
+    <!--begin::Item-->
+    <li class="nav-item mr-3">
+        @if (ViewBag.Controller == "Employee")
+        {
+            <a href="#" class="nav-link py-4 px-6 active" data-toggle="tab" data-target="#kt_header_tab_2" role="tab">
+                Employee
+            </a>
+        }
+        else
+        {
+            <a href="#" class="nav-link py-4 px-6" data-toggle="tab" data-target="#kt_header_tab_2" role="tab">
+                Employee
+            </a>
+        }
+
+    </li>
+    <!--end::Item-->
+    <!--begin::Item-->
+    <li class="nav-item mr-3">
+        @if (ViewBag.Controller == "Department")
+        {
+            <a href="#" class="nav-link py-4 px-6 active" data-toggle="tab" data-target="#kt_header_tab_3" role="tab">
+                Department
+            </a>
+        }
+        else
+        {
+            <a href="#" class="nav-link py-4 px-6" data-toggle="tab" data-target="#kt_header_tab_3" role="tab">
+            Department
+            </a>
+        }
+
+    </li>
+    <!--end::Item-->
+    <!--begin::Item-->
+    <li class="nav-item mr-3">
+        @if (ViewBag.Controller == "Position")
+        {
+            <a href="#" class="nav-link py-4 px-6 active" data-toggle="tab" data-target="#kt_header_tab_4" role="tab">
+                Position
+            </a>
+        }
+        else
+        {
+            <a href="#" class="nav-link py-4 px-6" data-toggle="tab" data-target="#kt_header_tab_4" role="tab">
+                Position
+            </a>
+        }
+
+    </li>
+    <!--end::Item-->
+</ul>

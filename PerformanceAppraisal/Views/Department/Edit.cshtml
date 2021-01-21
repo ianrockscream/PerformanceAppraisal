@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewData["Title"] = "Edit Department";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@model PerformanceAppraisal.Repository.Models.GeneralModels
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card card-custom">
+            <div class="card-header">
+                <h3 class="card-title">Department Details</h3>
+            </div>
+            @using (Html.BeginForm("Edit", "Department", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+            {
+                <div class="card-body">
+                    <div class="form-group row">
+                        <div class="col-lg-6">
+                            <label>Department Name:</label>
+                            <input type="text" class="form-control" placeholder="Enter department name" name="Name" value="@Model.Name" />
+                            <span class="form-text text-muted">Please enter departments name</span>
+                        </div>
+                        <div class="col-lg-6">
+                            <label>Description:</label>
+                            <input type="number" class="form-control" placeholder="Enter description" name="Description" value="@Model.Description" />
+                            <span class="form-text text-muted">Please enter department description</span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-6">
+                            <label>Active:</label>
+                            <div class="radio-inline">
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="active" checked="checked" value="true" />
+                                    <span></span>
+                                    Active
+                                </label>
+                                <label class="radio radio-solid">
+                                    <input type="radio" name="active" value="false" />
+                                    <span></span>
+                                    Inactive
+                                </label>
+                            </div>
+                            <span class="form-text text-muted">Please select department status</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <button type="submit" class="btn btn-primary mr-2">Save</button>
+                            <button type="reset" class="btn btn-secondary">Cancel</button>
+                        </div>
+                        <div class="col-lg-6 text-right">
+                            <button type="reset" class="btn btn-danger">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script>
+    function getsubdeparment()
+    {
+        var departmentId = $("#Department").val();
+        $.ajax
+        ({
+            url: '@Url.Content("~/Account/GetSubdepartment")',
+            type: 'POST',
+            datatype: 'application/json',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                'departmentId': +departmentId
+            }),
+            success: function (result) {
+                $("#Subdepartment").html("");
+                $("#Subdepartment").append
+                ($('<option></option>').val(null).html("-Choose Subdepartment-"));
+                $.each($.parseJSON(result), function (i, subdept)
+                { $("#Subdepartment").append($('<option></option>').val(subdept.SubdepartmentId).html(subdept.Name)) })
+                $("#Subdepartment").focus();
+            },
+            error: function () { alert("Whooaaa! Something went wrong..") },
+        });
+    }
+</script>
