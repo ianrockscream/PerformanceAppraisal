@@ -465,6 +465,12 @@ namespace PerformanceAppraisal.Entities.model
 
                 entity.Property(e => e.MobilityId).HasColumnName("mobilityId");
 
+                entity.Property(e => e.Mobilitydesc)
+                    .HasColumnName("mobilitydesc")
+                    .HasColumnType("varchar(200)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
+
                 entity.Property(e => e.Overalldescriptivescore)
                     .HasColumnName("overalldescriptivescore")
                     .HasColumnType("varchar(200)")

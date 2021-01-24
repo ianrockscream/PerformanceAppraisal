@@ -31,15 +31,16 @@ namespace PerformanceAppraisal.Controllers
             }
             if(!ESM.isAdministrator)
             {
-                ViewBag.Controller = ControllerContext.RouteData.Values["Controller"];//ViewContext.RouteData.Values["Controller"].ToString();
+                ViewBag.Controller = ControllerContext.RouteData.Values["Controller"];
                 ViewBag.employeeName = ESM.Name;
                 ViewBag.email = ESM.Email;
                 ViewBag.position = ESM.Position + " " + ESM.Department + " " + ESM.SubDepartment;
                 ViewBag.employeeId = ESM.EmployeeId;
+                ViewBag.level = ESM.Level;
             }
             else
             {
-                ViewBag.Controller = ControllerContext.RouteData.Values["Controller"];//ViewContext.RouteData.Values["Controller"].ToString();
+                ViewBag.Controller = ControllerContext.RouteData.Values["Controller"];
                 ViewBag.employeeName = ESM.Name;
                 ViewBag.email = ESM.Email;
                 ViewBag.position = ESM.Position;

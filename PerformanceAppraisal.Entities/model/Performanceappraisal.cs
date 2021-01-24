@@ -22,6 +22,7 @@ namespace PerformanceAppraisal.Entities.model
         public int? Overallnumericscore { get; set; }
         public string Overalldescriptivescore { get; set; }
         public int? MobilityId { get; set; }
+        public string Mobilitydesc { get; set; }
         public string Careeraspirationcomment { get; set; }
         public string Employeecomment { get; set; }
         public string Managercomment { get; set; }

@@ -37,37 +37,6 @@ namespace PerformanceAppraisal.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        public IActionResult IndividualAssessment()
-        {
-            string ESMJson = HttpContext.Session.GetString("ESM");
-            EmployeeSessionModel ESM = JsonConvert.DeserializeObject<EmployeeSessionModel>(ESMJson);
-
-            DepartmentRepository deptRepo = new DepartmentRepository();
-            SubDeparmentRepository subDeptRepo = new SubDeparmentRepository();
-
-            ViewBag.Department = deptRepo.GetDepartments();
-            ViewBag.SubDepartment = subDeptRepo.GetSubdepartments();
-
-            return View(ESM);
-        }
-        public IActionResult SuperiorAssessment()
-        {
-            string ESMJson = HttpContext.Session.GetString("ESM");
-            EmployeeSessionModel ESM = JsonConvert.DeserializeObject<EmployeeSessionModel>(ESMJson);
-
-            DepartmentRepository deptRepo = new DepartmentRepository();
-            SubDeparmentRepository subDeptRepo = new SubDeparmentRepository();
-
-            ViewBag.Department = deptRepo.GetDepartments();
-            ViewBag.SubDepartment = subDeptRepo.GetSubdepartments();
-            ViewBag.Controller = "Home";
-            return View(ESM);
-        }
-        public IActionResult AssessmentApproval()
-        {
-            string ESMJson = HttpContext.Session.GetString("ESM");
-            EmployeeSessionModel ESM = JsonConvert.DeserializeObject<EmployeeSessionModel>(ESMJson);
-            return View(ESM);
-        }
+        
     }
 }

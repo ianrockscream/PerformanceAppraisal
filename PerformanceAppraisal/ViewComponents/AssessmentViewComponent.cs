@@ -9,7 +9,7 @@ using X.PagedList;
 
 namespace PerformanceAppraisal.ViewComponents
 {
-    public class AdminViewComponent : ViewComponent
+    public class AssessmentViewComponent : ViewComponent
     {
         public IViewComponentResult Invoke(int page = 1, int pageSize = 20)
         {

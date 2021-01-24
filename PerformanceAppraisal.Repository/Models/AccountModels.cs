@@ -25,6 +25,7 @@ namespace PerformanceAppraisal.Repository.Models
         public string PositionId { get; set; }
         public string SubDepartment { get; set; }
         public string SubDeparmentId { get; set; }
+        public int Level { get; set; }
         public bool isAdministrator { get; set; }
     }
     public class GetSubdepartmentModel

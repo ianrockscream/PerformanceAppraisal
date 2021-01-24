@@ -43,6 +43,7 @@ namespace PerformanceAppraisal.Controllers
                 ESM.PositionId = employee.PositionId.ToString();
                 ESM.SubDepartment = employee.Subdepartment.Name;
                 ESM.SubDeparmentId = employee.SubdepartmentId.ToString();
+                ESM.Level = Convert.ToInt32(employee.Position.Level);
 
                 string ESMJson = JsonConvert.SerializeObject(ESM);
                 HttpContext.Session.SetString("ESM", ESMJson);
