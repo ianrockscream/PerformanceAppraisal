@@ -37,4 +37,8 @@ namespace PerformanceAppraisal.Repository.Models
         public string ManagerApproval { get; set; }
         public string SecondLevelManagerApproval { get; set; }
     }
+    public class PerformanceAppraisalModels
+    { 
+
+    }
 }

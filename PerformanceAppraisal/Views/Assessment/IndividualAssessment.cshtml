@@ -66,142 +66,125 @@
                 <tbody>
                     <tr>
                         <td class="pl-0">
-                            <input type="text" class="form-control" name="businessgoals" />
+                            <input type="text" class="form-control" name="BODescription" />
                         </td>
                         <td>
-                            <input type="text" class="form-control" name="weight" id="weight1" />
+                            <input type="text" class="form-control" name="BOWeight" id="weight1" onblur="OnWeightChange(this);" />
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" name="goal" />
+                                <input type="text" class="form-control" name="BOGoals" />
                             </span>
                         </td>
                         <td>
-                            <div class="radio-inline">
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="score" checked="checked" value="1" />
-                                    <span></span>1
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="score" value="2" />
-                                    <span></span>2
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="score" value="3" />
-                                    <span></span>3
-                                </label>
-                            </div>
+                            <select name="BOEmployeeScore" id="employeeScore1" onchange="OnScoreChange(this);" class="form-control">
+                                <option value="0">Please Select</option>
+                                <option value="1">Needs Improvement</option>
+                                <option value="2">Meets Expectation</option>
+                                <option value="3">Exceeds Expectation</option>
+                            </select>
+                            <input type="hidden" id="rawScore1" name="rawScore" />
                         </td>
                     </tr>
                     <tr>
                         <td class="pl-0">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" />
-                            </span>
+                            <input type="text" class="form-control" name="BODescription" />
                         </td>
                         <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                <input type="text" class="form-control" />
-                            </span>
+                            <input type="text" class="form-control" name="BOWeight" id="weight2" onblur="OnWeightChange(this);" />
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="BOGoals" />
                             </span>
                         </td>
                         <td>
-                            <div class="radio-inline">
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt2" checked="checked" value="1" />
-                                    <span></span>1
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt2" value="2" />
-                                    <span></span>2
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt2" value="3" />
-                                    <span></span>3
-                                </label>
-                            </div>
+                            <select name="BOEmployeeScore" id="employeeScore2" onchange="OnScoreChange(this);" class="form-control">
+                                <option value="0">Please Select</option>
+                                <option value="1">Needs Improvement</option>
+                                <option value="2">Meets Expectation</option>
+                                <option value="3">Exceeds Expectation</option>
+                            </select>
+                            <input type="hidden" id="rawScore2" name="rawScore" />
                         </td>
                     </tr>
                     <tr>
                         <td class="pl-0">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" />
-                            </span>
+                            <input type="text" class="form-control" name="BODescription" />
                         </td>
                         <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                <input type="text" class="form-control" />
-                            </span>
+                            <input type="text" class="form-control" name="BOWeight" id="weight3" onblur="OnWeightChange(this);" />
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="BOGoals" />
                             </span>
                         </td>
                         <td>
-                            <div class="radio-inline">
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt3" checked="checked" value="1" />
-                                    <span></span>1
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt3" value="2" />
-                                    <span></span>2
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt3" value="3" />
-                                    <span></span>3
-                                </label>
-                            </div>
+                            <select name="BOEmployeeScore" id="employeeScore3" onchange="OnScoreChange(this);" class="form-control">
+                                <option value="0">Please Select</option>
+                                <option value="1">Needs Improvement</option>
+                                <option value="2">Meets Expectation</option>
+                                <option value="3">Exceeds Expectation</option>
+                            </select>
+                            <input type="hidden" id="rawScore3" name="rawScore" />
                         </td>
                     </tr>
                     <tr>
                         <td class="pl-0">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" />
-                            </span>
+                            <input type="text" class="form-control" name="BODescription" />
                         </td>
                         <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                <input type="text" class="form-control" />
-                            </span>
+                            <input type="text" class="form-control" name="BOWeight" id="weight4" onblur="OnWeightChange(this);" />
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="BOGoals" />
                             </span>
                         </td>
                         <td>
-                            <div class="radio-inline">
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt4" checked="checked" value="1" />
-                                    <span></span>1
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt4" value="2" />
-                                    <span></span>2
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt4" value="3" />
-                                    <span></span>3
-                                </label>
-                            </div>
+                            <select name="BOEmployeeScore" id="employeeScore4" onchange="OnScoreChange(this);" class="form-control">
+                                <option value="0">Please Select</option>
+                                <option value="1">Needs Improvement</option>
+                                <option value="2">Meets Expectation</option>
+                                <option value="3">Exceeds Expectation</option>
+                            </select>
+                            <input type="hidden" id="rawScore4" name="rawScore" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="pl-0">
+                            <input type="text" class="form-control" name="BODescription" />
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" name="BOWeight" id="weight5" onblur="OnWeightChange(this);" />
+                        </td>
+                        <td>
+                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                <input type="text" class="form-control" name="BOGoals" />
+                            </span>
+                        </td>
+                        <td>
+                            <select name="BOEmployeeScore" id="employeeScore5" onchange="OnScoreChange(this);" class="form-control">
+                                <option value="0">Please Select</option>
+                                <option value="1">Needs Improvement</option>
+                                <option value="2">Meets Expectation</option>
+                                <option value="3">Exceeds Expectation</option>
+                            </select>
+                            <input type="hidden" id="rawScore5" name="rawScore" />
                         </td>
                     </tr>
                     <tr>
                         <td class="pl-0">
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
                                 Total Weight
-                            </span>
+                            </span>                            
                         </td>
                         <td>
                             <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
                                 100
                             </span>
+                            <input type="hidden" id="totweight" />
                         </td>
                         <td></td>
                         <td></td>
@@ -217,14 +200,16 @@
                             </span>
                         </td>
                         <td>
-                            <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-right">
+                            <span id="numericalscore" class="text-dark-75 font-weight-bolder d-block font-size-lg text-right">
                                 2.80
                             </span>
+                            <input type="hidden" id="bonumericalscore" name="BONumericalScore" />
                         </td>
                         <td colspan="2">
-                            <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                            <span id="descriptivescore" class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
                                 Exceed Expectation
                             </span>
+                            <input type="hidden" id="bodescriptivescore" name="BODescriptiveScore" />
                         </td>
                     </tr>
                 </tbody>
@@ -271,34 +256,25 @@
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                <input type="text" class="form-control" />
+                                <input type="number" class="form-control disabled" value="25" />
                             </span>
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="GBExpectedBehavior" />
                             </span>
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="GBDemonstratedBehavior" />
                             </span>
                         </td>
                         <td>
-                            <div class="radio-inline">
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt5" checked="checked" value="1" />
-                                    <span></span>1
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt5" value="2" />
-                                    <span></span>2
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt5" value="3" />
-                                    <span></span>3
-                                </label>
-                            </div>
+                            <select class="form-control" id="gbemployeescore1" name="GBEmployeeScore">
+                                <option value="1">Needs Improvement</option>
+                                <option value="2">Meets Expectation</option>
+                                <option value="3">Exceeds Expectation</option>
+                            </select>
                         </td>
                     </tr>
                     <tr>
@@ -312,34 +288,25 @@
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                <input type="text" class="form-control" />
+                                <input type="number" class="form-control disabled" value="25" />
                             </span>
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="GBExpectedBehavior" />
                             </span>
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="GBDemonstratedBehavior" />
                             </span>
                         </td>
                         <td>
-                            <div class="radio-inline">
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt6" checked="checked" value="1" />
-                                    <span></span>1
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt6" value="2" />
-                                    <span></span>2
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt6" value="3" />
-                                    <span></span>3
-                                </label>
-                            </div>
+                            <select class="form-control" id="gbemployeescore2" name="GBEmployeeScore">
+                                <option value="1">Needs Improvement</option>
+                                <option value="2">Meets Expectation</option>
+                                <option value="3">Exceeds Expectation</option>
+                            </select>
                         </td>
                     </tr>
                     <tr>
@@ -353,34 +320,25 @@
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                <input type="text" class="form-control" />
+                                <input type="number" class="form-control disabled" value="25" />
                             </span>
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="GBExpectedBehavior" />
                             </span>
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="GBDemonstratedBehavior" />
                             </span>
                         </td>
                         <td>
-                            <div class="radio-inline">
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt7" checked="checked" value="1" />
-                                    <span></span>1
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt7" value="2" />
-                                    <span></span>2
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt7" value="3" />
-                                    <span></span>3
-                                </label>
-                            </div>
+                            <select class="form-control" id="gbemployeescore3" name="GBEmployeeScore">
+                                <option value="1">Needs Improvement</option>
+                                <option value="2">Meets Expectation</option>
+                                <option value="3">Exceeds Expectation</option>
+                            </select>
                         </td>
                     </tr>
                     <tr>
@@ -394,34 +352,25 @@
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                <input type="text" class="form-control" />
+                                <input type="number" class="form-control disabled" value="25" />
                             </span>
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="GBExpectedBehavior" />
                             </span>
                         </td>
                         <td>
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="GBDemonstratedBehavior" />
                             </span>
                         </td>
                         <td>
-                            <div class="radio-inline">
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt8" checked="checked" value="1" />
-                                    <span></span>1
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt8" value="2" />
-                                    <span></span>2
-                                </label>
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="rbt8" value="3" />
-                                    <span></span>3
-                                </label>
-                            </div>
+                            <select class="form-control" id="gbemployeescore4" name="GBEmployeeScore">
+                                <option value="1">Needs Improvement</option>
+                                <option value="2">Meets Expectation</option>
+                                <option value="3">Exceeds Expectation</option>
+                            </select>
                         </td>
                     </tr>
                     <tr>
@@ -453,11 +402,13 @@
                             <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-right">
                                 2.80
                             </span>
+                            <input type="hidden" name="GBNumericalScore" id="gbnumericalscore" />
                         </td>
                         <td class="min-w-200px pr-0">
                             <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-right">
                                 Exceed Expectation
                             </span>
+                            <input type="hidden" name="GBDescriptiveScore" id="gbdescriptivescore" />
                         </td>
                     </tr>
                 </tbody>
@@ -495,6 +446,7 @@
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
                                 <span id="weight">20</span>
                             </span>
+                            <input type="hidden" name="OverallNumericalScore" id="overallnumericalscore" />
                         </td>
                     </tr>
                     <tr>
@@ -507,6 +459,7 @@
                             <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
                                 <span id="weight">Exceed Expectation</span>
                             </span>
+                            <input type="hidden" name="OverallDescriptiveScore" id="overalldescriptivescore" />
                         </td>
                     </tr>
                 </tbody>
@@ -544,23 +497,24 @@
                         <td class="px-40">
                             <div class="radio-inline px-20">
                                 <label class="radio radio-solid">
-                                    <input type="radio" name="rbt9" checked="checked" value="1" />
+                                    <input type="radio" name="MobilityStatusId" checked="checked" value="1" />
                                     <span></span>
                                 </label>
                             </div>
                         </td>
                         <td class="px-40">
                             <div class="radio-inline pl-20">
-                                <label class="radio radio-solid">
+                                @*<label class="radio radio-solid">
                                     <input type="radio" name="rbt9" checked="checked" value="1" />
                                     <span></span>
-                                </label>
+                                </label>*@
+                                <input type="text" name="MobilityStatusDesc" class="form-control" />
                             </div>
                         </td>
                         <td class="px-40">
                             <div class="radio-inline pl-10">
                                 <label class="radio radio-solid">
-                                    <input type="radio" name="rbt9" checked="checked" value="1" />
+                                    <input type="radio" name="MobilityStatusId" checked="checked" value="1" />
                                     <span></span>
                                 </label>
                             </div>
@@ -629,7 +583,7 @@
                             </select>
                         </td>
                         <td>
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" name="CareerAspirationComment"></textarea>
                         </td>
                     </tr>
                 </tbody>
@@ -666,7 +620,7 @@
                             </span>
                         </td>
                         <td>
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" name="DPPlan"></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -679,7 +633,7 @@
                             </span>
                         </td>
                         <td>
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" name="DPMethods"></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -692,7 +646,7 @@
                             </span>
                         </td>
                         <td>
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" name="DPStrengthArea"></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -705,7 +659,7 @@
                             </span>
                         </td>
                         <td>
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" name="DPDevelopmentArea"></textarea>
                         </td>
                     </tr>
                 </tbody>
@@ -747,13 +701,13 @@
                             </span>
                         </td>
                         <td>
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" name="EmployeeComment"></textarea>
                         </td>
                         <td>
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" name="ManagerComment"></textarea>
                         </td>
                         <td>
-                            <textarea class="form-control"></textarea>
+                            <textarea class="form-control" name="SecondLevelManagerComment"></textarea>
                         </td>
                     </tr>
                     <tr>
@@ -803,9 +757,62 @@
     </div>
 </div>
 <script>
-    $(document).ready(function () {
-        $(document).on("click", ".color-grey", function () {
+    //$(document).ready(function () {
+    //    $(document).on("click", ".color-grey", function () {
 
-        }
-    });
+    //    }
+    //});
+
+    function OnWeightChange(x) {
+        var weight = parseInt(x.value);
+        var labelTotalWeight = $("#totalweight")[0];
+        var totalWeight = $("#totweight").val();
+        if (totalWeight === "")
+            totalWeight = 0;
+        else
+            totalWeight = parseInt(totalWeight);
+        totalWeight = weight + totalWeight;
+        document.getElementById("totweight").value = totalWeight;
+        labelTotalWeight.textContent = totalWeight;
+    }
+    function OnScoreChange(x) {
+        var id = x.id.replace("employeeScore","");
+        var score = parseInt(x.value);
+        var labelNumericalScore = $("#numericalscore")[0];
+        var weight = $("#weight" + id + "").val();
+        var rawscore = $("#rawScore" + id + "").val();
+        if (rawscore === "")
+            rawscore = 0;
+        else
+            rawscore = Number(rawscore);
+        if (weight === "")
+            weight = 0;
+        else
+            weight = parseInt(weight);
+
+        var bonumericalscore = $("#bonumericalscore").val();
+        if (bonumericalscore === "")
+            bonumericalscore = 0;
+        else
+            bonumericalscore = Number(bonumericalscore);
+        if (rawscore > 0)
+            bonumericalscore = bonumericalscore - rawscore;
+
+        rawscore = Number(score * (weight / 100)).toFixed(2);        
+        document.getElementById("rawScore" + id).value = Number(rawscore).toFixed(2);
+        bonumericalscore = Number(bonumericalscore) + Number(rawscore);
+        document.getElementById("bonumericalscore").value = Number(bonumericalscore).toFixed(2);
+        labelNumericalScore.textContent = Number(bonumericalscore).toFixed(2);
+
+        var descriptivevalue = "";
+        if (bonumericalscore >= 2.5)
+            descriptivevalue = "Exceeds Expectation";
+        else if (bonumericalscore >= 1.69)
+            descriptivevalue = "Meets Expectation";
+        else
+            descriptivevalue = "Needs Improvements";
+
+        document.getElementById("descriptivescore").value = descriptivevalue;
+        $("#descriptivescore")[0].textContent = descriptivevalue;
+    }
 </script>

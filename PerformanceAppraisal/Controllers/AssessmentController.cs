@@ -13,7 +13,7 @@ using PerformanceAppraisal.Repository.Repo;
 
 namespace PerformanceAppraisal.Controllers
 {
-    public class AssessmentController : Controller
+    public class AssessmentController : BaseController
     {
         public IActionResult Index()
         {
