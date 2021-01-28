@@ -26,11 +26,17 @@ namespace PerformanceAppraisal.Controllers
 
             DepartmentRepository deptRepo = new DepartmentRepository();
             SubDeparmentRepository subDeptRepo = new SubDeparmentRepository();
-
+            ViewBag.departmentId = ESM.DepartmentId;
+            ViewBag.subdepartmentId = ESM.SubDeparmentId;
             ViewBag.Department = deptRepo.GetDepartments();
             ViewBag.SubDepartment = subDeptRepo.GetSubdepartments();
 
             return View(ESM);
+        }
+        [HttpPost]
+        public IActionResult SaveFormAssessment(AssessmentModels model)
+        {
+            return View();
         }
         public IActionResult SuperiorAssessment()
         {

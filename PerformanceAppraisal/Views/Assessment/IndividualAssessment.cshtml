@@ -40,743 +40,799 @@
     </div>
 </div>
 
-<div class="card card-custom gutter-b">
-    <!--begin::Header-->
-    <div class="card-header border-0 py-5">
-        <h3 class="card-title align-items-start flex-column">
-            <span class="card-label font-weight-bolder text-dark">Business Goals</span>
-            <span class="text-muted mt-3 font-weight-bold font-size-sm">Description here..</span>
-        </h3>
+@using (Html.BeginForm("SaveFormAssessment", "Assessment", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+{
+    <div class="card card-custom gutter-b">
+        <!--begin::Header-->
+        <div class="card-header border-0 py-5">
+            <h3 class="card-title align-items-start flex-column">
+                <span class="card-label font-weight-bolder text-dark">Business Goals</span>
+                <span class="text-muted mt-3 font-weight-bold font-size-sm">Description here..</span>
+            </h3>
 
-    </div>
-    <!--end::Header-->
-    <!--begin::Body-->
-    <div class="card-body py-0">
-        <!--begin::Table-->
-        <div class="table-responsive">
-            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
-                <thead>
-                    <tr class="text-left">
-                        <th class="pl-0" style="min-width:150px">Business Goals</th>
-                        <th class="pr-0" style="min-width: 80px">Weight(%)</th>
-                        <th style="min-width: 200px">Goal Achievement</th>
-                        <th class="pr-0">Self Assessment</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="pl-0">
-                            <input type="text" class="form-control" name="BODescription" />
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" name="BOWeight" id="weight1" onblur="OnWeightChange(this);" />
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" name="BOGoals" />
-                            </span>
-                        </td>
-                        <td>
-                            <select name="BOEmployeeScore" id="employeeScore1" onchange="OnScoreChange(this);" class="form-control">
-                                <option value="0">Please Select</option>
-                                <option value="1">Needs Improvement</option>
-                                <option value="2">Meets Expectation</option>
-                                <option value="3">Exceeds Expectation</option>
-                            </select>
-                            <input type="hidden" id="rawScore1" name="rawScore" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0">
-                            <input type="text" class="form-control" name="BODescription" />
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" name="BOWeight" id="weight2" onblur="OnWeightChange(this);" />
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" name="BOGoals" />
-                            </span>
-                        </td>
-                        <td>
-                            <select name="BOEmployeeScore" id="employeeScore2" onchange="OnScoreChange(this);" class="form-control">
-                                <option value="0">Please Select</option>
-                                <option value="1">Needs Improvement</option>
-                                <option value="2">Meets Expectation</option>
-                                <option value="3">Exceeds Expectation</option>
-                            </select>
-                            <input type="hidden" id="rawScore2" name="rawScore" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0">
-                            <input type="text" class="form-control" name="BODescription" />
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" name="BOWeight" id="weight3" onblur="OnWeightChange(this);" />
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" name="BOGoals" />
-                            </span>
-                        </td>
-                        <td>
-                            <select name="BOEmployeeScore" id="employeeScore3" onchange="OnScoreChange(this);" class="form-control">
-                                <option value="0">Please Select</option>
-                                <option value="1">Needs Improvement</option>
-                                <option value="2">Meets Expectation</option>
-                                <option value="3">Exceeds Expectation</option>
-                            </select>
-                            <input type="hidden" id="rawScore3" name="rawScore" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0">
-                            <input type="text" class="form-control" name="BODescription" />
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" name="BOWeight" id="weight4" onblur="OnWeightChange(this);" />
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" name="BOGoals" />
-                            </span>
-                        </td>
-                        <td>
-                            <select name="BOEmployeeScore" id="employeeScore4" onchange="OnScoreChange(this);" class="form-control">
-                                <option value="0">Please Select</option>
-                                <option value="1">Needs Improvement</option>
-                                <option value="2">Meets Expectation</option>
-                                <option value="3">Exceeds Expectation</option>
-                            </select>
-                            <input type="hidden" id="rawScore4" name="rawScore" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0">
-                            <input type="text" class="form-control" name="BODescription" />
-                        </td>
-                        <td>
-                            <input type="text" class="form-control" name="BOWeight" id="weight5" onblur="OnWeightChange(this);" />
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" name="BOGoals" />
-                            </span>
-                        </td>
-                        <td>
-                            <select name="BOEmployeeScore" id="employeeScore5" onchange="OnScoreChange(this);" class="form-control">
-                                <option value="0">Please Select</option>
-                                <option value="1">Needs Improvement</option>
-                                <option value="2">Meets Expectation</option>
-                                <option value="3">Exceeds Expectation</option>
-                            </select>
-                            <input type="hidden" id="rawScore5" name="rawScore" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                Total Weight
-                            </span>                            
-                        </td>
-                        <td>
-                            <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                100
-                            </span>
-                            <input type="hidden" id="totweight" />
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2" class="text-left pl-0">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                NILAI AKHIR OBJEKTIF (diisi pada saat year-end review)
-                            </span>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                FINAL SCORE FOR BUSINESS GOALS (To be complete during year-end review)
-                            </span>
-                        </td>
-                        <td>
-                            <span id="numericalscore" class="text-dark-75 font-weight-bolder d-block font-size-lg text-right">
-                                2.80
-                            </span>
-                            <input type="hidden" id="bonumericalscore" name="BONumericalScore" />
-                        </td>
-                        <td colspan="2">
-                            <span id="descriptivescore" class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                Exceed Expectation
-                            </span>
-                            <input type="hidden" id="bodescriptivescore" name="BODescriptiveScore" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
-        <!--end::Table-->
-    </div>
-    <!--end::Body-->
-</div>
-
-<div class="card card-custom gutter-b">
-    <!--begin::Header-->
-    <div class="card-header border-0 py-5">
-        <h3 class="card-title align-items-start flex-column">
-            <span class="card-label font-weight-bolder text-dark">Global Attitudes</span>
-            <span class="text-muted mt-3 font-weight-bold font-size-sm">Description here..</span>
-        </h3>
-
-    </div>
-    <!--end::Header-->
-    <!--begin::Body-->
-    <div class="card-body py-0">
-        <!--begin::Table-->
-        <div class="table-responsive">
-            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
-                <thead>
-                    <tr class="text-left">
-                        <th class="pl-0" style="min-width:150px">Global Attitudes</th>
-                        <th class="pr-0" style="min-width: 80px">Weight(%)</th>
-                        <th style="min-width: 200px">Expected Behavior</th>
-                        <th style="min-width: 200px">Demonstrated Behavior</th>
-                        <th class="pr-0">Self Assessment</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="pl-0">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                Simple
-                            </span>
-                            <span class="text-muted">
-                                Mencari cara untuk membuat pekerjaan menjadi lebih sederhana dan efisien
-                            </span>
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                <input type="number" class="form-control disabled" value="25" />
-                            </span>
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" name="GBExpectedBehavior" />
-                            </span>
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" name="GBDemonstratedBehavior" />
-                            </span>
-                        </td>
-                        <td>
-                            <select class="form-control" id="gbemployeescore1" name="GBEmployeeScore">
-                                <option value="1">Needs Improvement</option>
-                                <option value="2">Meets Expectation</option>
-                                <option value="3">Exceeds Expectation</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                Be Bold
-                            </span>
-                            <span class="text-muted">
-                                Membuat suatu hal terjadi, dari ide menjadi tindakan nyata dan mampu membuat keputusan dengan cepat dengan memperhitungkan resikonya
-                            </span>
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                <input type="number" class="form-control disabled" value="25" />
-                            </span>
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" name="GBExpectedBehavior" />
-                            </span>
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" name="GBDemonstratedBehavior" />
-                            </span>
-                        </td>
-                        <td>
-                            <select class="form-control" id="gbemployeescore2" name="GBEmployeeScore">
-                                <option value="1">Needs Improvement</option>
-                                <option value="2">Meets Expectation</option>
-                                <option value="3">Exceeds Expectation</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                Be Dependable
-                            </span>
-                            <span class="text-muted">
-                                Memahami tanggung jawab dengan baik, jujur dengan performa dan terbuka dalam memberikan umpan balik kepada sesama rekan kerja
-                            </span>
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                <input type="number" class="form-control disabled" value="25" />
-                            </span>
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" name="GBExpectedBehavior" />
-                            </span>
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" name="GBDemonstratedBehavior" />
-                            </span>
-                        </td>
-                        <td>
-                            <select class="form-control" id="gbemployeescore3" name="GBEmployeeScore">
-                                <option value="1">Needs Improvement</option>
-                                <option value="2">Meets Expectation</option>
-                                <option value="3">Exceeds Expectation</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                One Voice
-                            </span>
-                            <span class="text-muted">
-                                Memiliki pola pikir "One VOICE" yang mau berkolaborasi, menghargai perbedaan dalam tim dan mau mendengar sesama rekan kerja
-                            </span>
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                <input type="number" class="form-control disabled" value="25" />
-                            </span>
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" name="GBExpectedBehavior" />
-                            </span>
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                <input type="text" class="form-control" name="GBDemonstratedBehavior" />
-                            </span>
-                        </td>
-                        <td>
-                            <select class="form-control" id="gbemployeescore4" name="GBEmployeeScore">
-                                <option value="1">Needs Improvement</option>
-                                <option value="2">Meets Expectation</option>
-                                <option value="3">Exceeds Expectation</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                Total Weight
-                            </span>
-                        </td>
-                        <td>
-                            <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                100
-                            </span>
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td colspan="3" class="text-left pl-0">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                NILAI AKHIR GLOBAL FLAGSHIP BEHAVIORS (diisi pada saat year-end review)
-                            </span>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                FINAL SCORE FOR GLOBAL FLAGSHIP BEHAVIORS (To be complete during year-end review)
-                            </span>
-                        </td>
-                        <td>
-                            <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-right">
-                                2.80
-                            </span>
-                            <input type="hidden" name="GBNumericalScore" id="gbnumericalscore" />
-                        </td>
-                        <td class="min-w-200px pr-0">
-                            <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-right">
-                                Exceed Expectation
-                            </span>
-                            <input type="hidden" name="GBDescriptiveScore" id="gbdescriptivescore" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body py-0">
+            <!--begin::Table-->
+            <div class="table-responsive">
+                <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
+                    <thead>
+                        <tr class="text-left">
+                            <th class="pl-0" style="min-width:150px">Business Goals</th>
+                            <th class="pr-0" style="min-width: 80px">Weight(%)</th>
+                            <th style="min-width: 200px">Goal Achievement</th>
+                            <th class="pr-0">Self Assessment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="pl-0">
+                                <input type="text" class="form-control" name="BODescription" />
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="BOWeight" id="weight1" onblur="OnWeightChange(this);" />
+                                <input type="hidden" id="currentweight1" />
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    <input type="text" class="form-control" name="BOGoals" />
+                                </span>
+                            </td>
+                            <td>
+                                <select name="BOEmployeeScore" id="employeeScore1" onchange="OnScoreChange(this);" class="form-control">
+                                    <option value="0">Please Select</option>
+                                    <option value="1">Needs Improvement</option>
+                                    <option value="2">Meets Expectation</option>
+                                    <option value="3">Exceeds Expectation</option>
+                                </select>
+                                <input type="hidden" id="rawScore1" name="rawScore" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pl-0">
+                                <input type="text" class="form-control" name="BODescription" />
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="BOWeight" id="weight2" onblur="OnWeightChange(this);" />
+                                <input type="hidden" id="currentweight2" />
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    <input type="text" class="form-control" name="BOGoals" />
+                                </span>
+                            </td>
+                            <td>
+                                <select name="BOEmployeeScore" id="employeeScore2" onchange="OnScoreChange(this);" class="form-control">
+                                    <option value="0">Please Select</option>
+                                    <option value="1">Needs Improvement</option>
+                                    <option value="2">Meets Expectation</option>
+                                    <option value="3">Exceeds Expectation</option>
+                                </select>
+                                <input type="hidden" id="rawScore2" name="rawScore" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pl-0">
+                                <input type="text" class="form-control" name="BODescription" />
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="BOWeight" id="weight3" onblur="OnWeightChange(this);" />
+                                <input type="hidden" id="currentweight3" />
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    <input type="text" class="form-control" name="BOGoals" />
+                                </span>
+                            </td>
+                            <td>
+                                <select name="BOEmployeeScore" id="employeeScore3" onchange="OnScoreChange(this);" class="form-control">
+                                    <option value="0">Please Select</option>
+                                    <option value="1">Needs Improvement</option>
+                                    <option value="2">Meets Expectation</option>
+                                    <option value="3">Exceeds Expectation</option>
+                                </select>
+                                <input type="hidden" id="rawScore3" name="rawScore" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pl-0">
+                                <input type="text" class="form-control" name="BODescription" />
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="BOWeight" id="weight4" onblur="OnWeightChange(this);" />
+                                <input type="hidden" id="currentweight4" />
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    <input type="text" class="form-control" name="BOGoals" />
+                                </span>
+                            </td>
+                            <td>
+                                <select name="BOEmployeeScore" id="employeeScore4" onchange="OnScoreChange(this);" class="form-control">
+                                    <option value="0">Please Select</option>
+                                    <option value="1">Needs Improvement</option>
+                                    <option value="2">Meets Expectation</option>
+                                    <option value="3">Exceeds Expectation</option>
+                                </select>
+                                <input type="hidden" id="rawScore4" name="rawScore" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pl-0">
+                                <input type="text" class="form-control" name="BODescription" />
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" name="BOWeight" id="weight5" onblur="OnWeightChange(this);" />
+                                <input type="hidden" id="currentweight5" />
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    <input type="text" class="form-control" name="BOGoals" />
+                                </span>
+                            </td>
+                            <td>
+                                <select name="BOEmployeeScore" id="employeeScore5" onchange="OnScoreChange(this);" class="form-control">
+                                    <option value="0">Please Select</option>
+                                    <option value="1">Needs Improvement</option>
+                                    <option value="2">Meets Expectation</option>
+                                    <option value="3">Exceeds Expectation</option>
+                                </select>
+                                <input type="hidden" id="rawScore5" name="rawScore" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pl-0">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    Total Weight
+                                </span>
+                            </td>
+                            <td>
+                                <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                    0
+                                </span>
+                                <input type="hidden" id="totweight" />
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-left pl-0">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    NILAI AKHIR OBJEKTIF (diisi pada saat year-end review)
+                                </span>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    FINAL SCORE FOR BUSINESS GOALS (To be complete during year-end review)
+                                </span>
+                            </td>
+                            <td>
+                                <span id="numericalscore" class="text-dark-75 font-weight-bolder d-block font-size-lg text-right">
+                                    0
+                                </span>
+                                <input type="hidden" id="bonumericalscore" name="BONumericalScore" />
+                            </td>
+                            <td colspan="2">
+                                <span id="descriptivescore" class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                    Exceed Expectation
+                                </span>
+                                <input type="hidden" id="bodescriptivescore" name="BODescriptiveScore" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--end::Table-->
         </div>
-        <!--end::Table-->
+        <!--end::Body-->
     </div>
-    <!--end::Body-->
-</div>
 
-<div class="card card-custom gutter-b">
-    <!--begin::Header-->
-    <div class="card-header border-0 py-5">
-        <h3 class="card-title align-items-start flex-column">
-            <span class="card-label font-weight-bolder text-dark">Nilai Akhir Performa</span>
-            <span class="text-muted mt-3 font-weight-bold font-size-sm">Overall Rating</span>
-        </h3>
+    <div class="card card-custom gutter-b">
+        <!--begin::Header-->
+        <div class="card-header border-0 py-5">
+            <h3 class="card-title align-items-start flex-column">
+                <span class="card-label font-weight-bolder text-dark">Global Attitudes</span>
+                <span class="text-muted mt-3 font-weight-bold font-size-sm">Description here..</span>
+            </h3>
 
-    </div>
-    <!--end::Header-->
-    <!--begin::Body-->
-    <div class="card-body py-0">
-        <!--begin::Table-->
-        <div class="table-responsive">
-            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
-
-                <tbody>
-                    <tr>
-                        <td class="pl-0">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                Nilai Angka (Numerical Score)
-                            </span>
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                <span id="weight">20</span>
-                            </span>
-                            <input type="hidden" name="OverallNumericalScore" id="overallnumericalscore" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                Nilai Deskriptif (Descriptive Score)
-                            </span>
-                        </td>
-                        <td>
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                <span id="weight">Exceed Expectation</span>
-                            </span>
-                            <input type="hidden" name="OverallDescriptiveScore" id="overalldescriptivescore" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
-        <!--end::Table-->
-    </div>
-    <!--end::Body-->
-</div>
-
-<div class="card card-custom gutter-b">
-    <!--begin::Header-->
-    <div class="card-header border-0 py-5">
-        <h3 class="card-title align-items-start flex-column">
-            <span class="card-label font-weight-bolder text-dark">Status Mobilitas (Mobility Status)</span>
-            <span class="text-muted mt-3 font-weight-bold font-size-sm">(Harap Beri tanda pada box yang tepat, Please tick appropriate box)</span>
-        </h3>
-
-    </div>
-    <!--end::Header-->
-    <!--begin::Body-->
-    <div class="card-body py-0">
-        <!--begin::Table-->
-        <div class="table-responsive">
-            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
-                <thead>
-                    <tr class="text-center">
-                        <th>Siap Ditempatkan Dimana Saja(Mobile)</th>
-                        <th>Siap ditempatkan diberapa lokasi saja(Partially Mobile)</th>
-                        <th>Tidak Siap Dipindah(Not Mobile)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="px-40">
-                            <div class="radio-inline px-20">
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="MobilityStatusId" checked="checked" value="1" />
-                                    <span></span>
-                                </label>
-                            </div>
-                        </td>
-                        <td class="px-40">
-                            <div class="radio-inline pl-20">
-                                @*<label class="radio radio-solid">
-                                    <input type="radio" name="rbt9" checked="checked" value="1" />
-                                    <span></span>
-                                </label>*@
-                                <input type="text" name="MobilityStatusDesc" class="form-control" />
-                            </div>
-                        </td>
-                        <td class="px-40">
-                            <div class="radio-inline pl-10">
-                                <label class="radio radio-solid">
-                                    <input type="radio" name="MobilityStatusId" checked="checked" value="1" />
-                                    <span></span>
-                                </label>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body py-0">
+            <!--begin::Table-->
+            <div class="table-responsive">
+                <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
+                    <thead>
+                        <tr class="text-left">
+                            <th class="pl-0" style="min-width:150px">Global Attitudes</th>
+                            <th class="pr-0" style="min-width: 80px">Weight(%)</th>
+                            <th style="min-width: 200px">Expected Behavior</th>
+                            <th style="min-width: 200px">Demonstrated Behavior</th>
+                            <th class="pr-0">Self Assessment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="pl-0">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    Simple
+                                </span>
+                                <span class="text-muted">
+                                    Mencari cara untuk membuat pekerjaan menjadi lebih sederhana dan efisien
+                                </span>
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                    <input type="number" class="form-control disabled" value="25" />
+                                </span>
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    <input type="text" class="form-control" name="GBExpectedBehavior" />
+                                </span>
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    <input type="text" class="form-control" name="GBDemonstratedBehavior" />
+                                </span>
+                            </td>
+                            <td>
+                                <select class="form-control" id="gbemployeescore1" onchange="OnGBScoreChange(this);" name="GBEmployeeScore">
+                                    <option value="0">Please Select</option>
+                                    <option value="1">Needs Improvement</option>
+                                    <option value="2">Meets Expectation</option>
+                                    <option value="3">Exceeds Expectation</option>
+                                </select>
+                                <input type="hidden" id="gbrawscore1" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pl-0">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    Be Bold
+                                </span>
+                                <span class="text-muted">
+                                    Membuat suatu hal terjadi, dari ide menjadi tindakan nyata dan mampu membuat keputusan dengan cepat dengan memperhitungkan resikonya
+                                </span>
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                    <input type="number" class="form-control disabled" value="25" />
+                                </span>
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    <input type="text" class="form-control" name="GBExpectedBehavior" />
+                                </span>
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    <input type="text" class="form-control" name="GBDemonstratedBehavior" />
+                                </span>
+                            </td>
+                            <td>
+                                <select class="form-control" id="gbemployeescore2" onchange="OnGBScoreChange(this);" name="GBEmployeeScore">
+                                    <option value="0">Please Select</option>
+                                    <option value="1">Needs Improvement</option>
+                                    <option value="2">Meets Expectation</option>
+                                    <option value="3">Exceeds Expectation</option>
+                                </select>
+                                <input type="hidden" id="gbrawscore2" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pl-0">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    Be Dependable
+                                </span>
+                                <span class="text-muted">
+                                    Memahami tanggung jawab dengan baik, jujur dengan performa dan terbuka dalam memberikan umpan balik kepada sesama rekan kerja
+                                </span>
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                    <input type="number" class="form-control disabled" value="25" />
+                                </span>
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    <input type="text" class="form-control" name="GBExpectedBehavior" />
+                                </span>
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    <input type="text" class="form-control" name="GBDemonstratedBehavior" />
+                                </span>
+                            </td>
+                            <td>
+                                <select class="form-control" id="gbemployeescore3" onchange="OnGBScoreChange(this);" name="GBEmployeeScore">
+                                    <option value="0">Please Select</option>
+                                    <option value="1">Needs Improvement</option>
+                                    <option value="2">Meets Expectation</option>
+                                    <option value="3">Exceeds Expectation</option>
+                                </select>
+                                <input type="hidden" id="gbrawscore3" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pl-0">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    One Voice
+                                </span>
+                                <span class="text-muted">
+                                    Memiliki pola pikir "One VOICE" yang mau berkolaborasi, menghargai perbedaan dalam tim dan mau mendengar sesama rekan kerja
+                                </span>
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                    <input type="number" class="form-control disabled" value="25" />
+                                </span>
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    <input type="text" class="form-control" name="GBExpectedBehavior" />
+                                </span>
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    <input type="text" class="form-control" name="GBDemonstratedBehavior" />
+                                </span>
+                            </td>
+                            <td>
+                                <select class="form-control" id="gbemployeescore4" onchange="OnGBScoreChange(this);" name="GBEmployeeScore">
+                                    <option value="0">Please Select</option>
+                                    <option value="1">Needs Improvement</option>
+                                    <option value="2">Meets Expectation</option>
+                                    <option value="3">Exceeds Expectation</option>
+                                </select>
+                                <input type="hidden" id="gbrawscore4" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pl-0">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    Total Weight
+                                </span>
+                            </td>
+                            <td>
+                                <span id="totalweight" class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                    100
+                                </span>
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="text-left pl-0">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    NILAI AKHIR GLOBAL FLAGSHIP BEHAVIORS (diisi pada saat year-end review)
+                                </span>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    FINAL SCORE FOR GLOBAL FLAGSHIP BEHAVIORS (To be complete during year-end review)
+                                </span>
+                            </td>
+                            <td>
+                                <span id="totalgbscore" class="text-dark-75 font-weight-bolder d-block font-size-lg text-right">
+                                    0
+                                </span>
+                                <input type="hidden" name="GBNumericalScore" id="gbnumericalscore" />
+                            </td>
+                            <td class="min-w-200px pr-0">
+                                <span id="gbdescscore" class="text-dark-75 font-weight-bolder d-block font-size-lg text-right">
+                                    Exceed Expectation
+                                </span>
+                                <input type="hidden" name="GBDescriptiveScore" id="gbdescriptivescore" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--end::Table-->
         </div>
-        <!--end::Table-->
+        <!--end::Body-->
     </div>
-    <!--end::Body-->
-</div>
 
-<div class="card card-custom gutter-b">
-    <!--begin::Header-->
-    <div class="card-header border-0 py-5">
-        <h3 class="card-title align-items-start flex-column">
-            <span class="card-label font-weight-bolder text-dark">Aspirasi Karir</span>
-            <span class="text-muted mt-3 font-weight-bold font-size-sm">(Harap Beri tanda pada box yang tepat, Please tick appropriate box)</span>
-        </h3>
+    <div class="card card-custom gutter-b">
+        <!--begin::Header-->
+        <div class="card-header border-0 py-5">
+            <h3 class="card-title align-items-start flex-column">
+                <span class="card-label font-weight-bolder text-dark">Nilai Akhir Performa</span>
+                <span class="text-muted mt-3 font-weight-bold font-size-sm">Overall Rating</span>
+            </h3>
 
+        </div>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body py-0">
+            <!--begin::Table-->
+            <div class="table-responsive">
+                <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
+
+                    <tbody>
+                        <tr>
+                            <td class="pl-0">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    Nilai Angka (Numerical Score)
+                                </span>
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                    <span id="labelnumericoverallscore">0</span>
+                                </span>
+                                <input type="hidden" name="OverallNumericalScore" id="overallnumericalscore" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pl-0">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    Nilai Deskriptif (Descriptive Score)
+                                </span>
+                            </td>
+                            <td>
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
+                                    <span id="labeldescriptiveoverallscore">-</span>
+                                </span>
+                                <input type="hidden" name="OverallDescriptiveScore" id="overalldescriptivescore" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--end::Table-->
+        </div>
+        <!--end::Body-->
     </div>
-    <!--end::Header-->
-    <!--begin::Body-->
-    <div class="card-body py-0">
-        <!--begin::Table-->
-        <div class="table-responsive">
-            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
-                <thead>
-                    <tr class="text-center">
-                        <th>Departemen(Function/Department)</th>
-                        <th>Subdepartemen(Sub Department)</th>
-                        <th>Komentar(Comments)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <select class="form-control" name="DepartmentId" id="Department" onchange="getsubdeparment();">
-                                @if (ViewBag.department != null)
-                                {
-                                    foreach (var item in ViewBag.department)
+
+    <div class="card card-custom gutter-b">
+        <!--begin::Header-->
+        <div class="card-header border-0 py-5">
+            <h3 class="card-title align-items-start flex-column">
+                <span class="card-label font-weight-bolder text-dark">Status Mobilitas (Mobility Status)</span>
+                <span class="text-muted mt-3 font-weight-bold font-size-sm">(Harap Beri tanda pada box yang tepat, Please tick appropriate box)</span>
+            </h3>
+
+        </div>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body py-0">
+            <!--begin::Table-->
+            <div class="table-responsive">
+                <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
+                    <thead>
+                        <tr class="text-center">
+                            <th>Siap Ditempatkan Dimana Saja(Mobile)</th>
+                            <th>Siap ditempatkan diberapa lokasi saja(Partially Mobile)</th>
+                            <th>Tidak Siap Dipindah(Not Mobile)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="px-40">
+                                <div class="radio-inline px-20">
+                                    <label class="radio radio-solid">
+                                        <input type="radio" name="MobilityStatusId" checked="checked" value="1" />
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </td>
+                            <td class="px-40">
+                                <div class="radio-inline pl-20">
+                                    @*<label class="radio radio-solid">
+                                            <input type="radio" name="rbt9" checked="checked" value="1" />
+                                            <span></span>
+                                        </label>*@
+                                    <input type="text" name="MobilityStatusDesc" class="form-control" />
+                                </div>
+                            </td>
+                            <td class="px-40">
+                                <div class="radio-inline pl-10">
+                                    <label class="radio radio-solid">
+                                        <input type="radio" name="MobilityStatusId" checked="checked" value="1" />
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--end::Table-->
+        </div>
+        <!--end::Body-->
+    </div>
+
+    <div class="card card-custom gutter-b">
+        <!--begin::Header-->
+        <div class="card-header border-0 py-5">
+            <h3 class="card-title align-items-start flex-column">
+                <span class="card-label font-weight-bolder text-dark">Aspirasi Karir</span>
+                <span class="text-muted mt-3 font-weight-bold font-size-sm">(Harap Beri tanda pada box yang tepat, Please tick appropriate box)</span>
+            </h3>
+
+        </div>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body py-0">
+            <!--begin::Table-->
+            <div class="table-responsive">
+                <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
+                    <thead>
+                        <tr class="text-center">
+                            <th>Departemen(Function/Department)</th>
+                            <th>Subdepartemen(Sub Department)</th>
+                            <th>Komentar(Comments)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <select class="form-control" name="DepartmentId" id="Department" onchange="getsubdeparment();">
+                                    @if (ViewBag.department != null)
                                     {
-                                        <option value="@item.Id">@item.Name</option>
+                                        foreach (var item in ViewBag.department)
+                                        {
+                                            if (ViewBag.departmentId == item.Id.ToString())
+                                            {
+                                                <option value="@item.Id" selected>@item.Name</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@item.Id">@item.Name</option>
+                                            }
+                                        }
                                     }
-                                }
-                                else
-                                {
-                                    <option value="">No Department</option>
-                                }
-                            </select>
-                        </td>
-                        <td>
-                            <select class="form-control" name="SubDepartmentId" id="Subdeparment">
-                                @if (ViewBag.subdepartment != null)
-                                {
-                                    foreach (var item in ViewBag.subdepartment)
+                                    else
                                     {
-                                        <option value="@item.Id">@item.Name</option>
+                                        <option value="">No Department</option>
                                     }
-                                }
-                                else
-                                {
-                                    <option value="">No SubDeparment</option>
-                                }
-                            </select>
-                        </td>
-                        <td>
-                            <textarea class="form-control" name="CareerAspirationComment"></textarea>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control" name="SubDepartmentId" id="Subdeparment">
+                                    @if (ViewBag.subdepartment != null)
+                                    {
+                                        foreach (var item in ViewBag.subdepartment)
+                                        {
+                                            if (ViewBag.subdepartmentId == item.Id.ToString())
+                                            {
+                                                <option value="@item.Id" selected>@item.Name</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@item.Id">@item.Name</option>
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <option value="">No SubDeparment</option>
+                                    }
+                                </select>
+                            </td>
+                            <td>
+                                <textarea class="form-control" name="CareerAspirationComment"></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--end::Table-->
         </div>
-        <!--end::Table-->
+        <!--end::Body-->
     </div>
-    <!--end::Body-->
-</div>
 
-<div class="card card-custom gutter-b">
-    <!--begin::Header-->
-    <div class="card-header border-0 py-5">
-        <h3 class="card-title align-items-start flex-column">
-            <span class="card-label font-weight-bolder text-dark">Rencana Pengembangan Diri(Development Plan)</span>
-            <span class="text-muted mt-3 font-weight-bold font-size-sm">Description here..</span>
-        </h3>
+    <div class="card card-custom gutter-b">
+        <!--begin::Header-->
+        <div class="card-header border-0 py-5">
+            <h3 class="card-title align-items-start flex-column">
+                <span class="card-label font-weight-bolder text-dark">Rencana Pengembangan Diri(Development Plan)</span>
+                <span class="text-muted mt-3 font-weight-bold font-size-sm">Description here..</span>
+            </h3>
 
-    </div>
-    <!--end::Header-->
-    <!--begin::Body-->
-    <div class="card-body py-0">
-        <!--begin::Table-->
-        <div class="table-responsive">
-            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
-                <tbody>
-                    <tr>
-                        <td class="pl-0 max-w-100px">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                Rencana Pengembangan Diri
-                            </span>
-                            <span class="text-muted">
-                                Development Plan
-                            </span>
-                        </td>
-                        <td>
-                            <textarea class="form-control" name="DPPlan"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0 max-w-100px">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                Metode yang digunakan
-                            </span>
-                            <span class="text-muted">
-                                Methods
-                            </span>
-                        </td>
-                        <td>
-                            <textarea class="form-control" name="DPMethods"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0 max-w-100px">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                Kelebihan Karyawan(Strength Area)
-                            </span>
-                            <span class="text-muted">
-                                Informasi ini diberikan oleh atasan pada saat penilaian akhir (Information provided by manager in year-end review stage)
-                            </span>
-                        </td>
-                        <td>
-                            <textarea class="form-control" name="DPStrengthArea"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0 max-w-100px">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                Area yang perlu dikembangkan (Development Area)
-                            </span>
-                            <span class="text-muted">
-                                Informasi ini diberikan oleh atasan pada saat penilaian akhir (Information provided by manager in year-end review stage)
-                            </span>
-                        </td>
-                        <td>
-                            <textarea class="form-control" name="DPDevelopmentArea"></textarea>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
-        <!--end::Table-->
-    </div>
-    <!--end::Body-->
-</div>
-
-<div class="card card-custom gutter-b">
-    <!--begin::Header-->
-    <div class="card-header border-0 py-5">
-        <h3 class="card-title align-items-start flex-column">
-            <span class="card-label font-weight-bolder text-dark">Komentar Akhir</span>
-            <span class="text-muted mt-3 font-weight-bold font-size-sm">Description here..</span>
-        </h3>
-
-    </div>
-    <!--end::Header-->
-    <!--begin::Body-->
-    <div class="card-body py-0">
-        <!--begin::Table-->
-        <div class="table-responsive">
-            <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
-                <thead>
-                    <tr class="text-center">
-                        <th></th>
-                        <th>Karyawan(Employee)</th>
-                        <th>Atasan(Manager)</th>
-                        <th>Atasan dari atasan langsung (2nd Level Manager)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="pl-0 max-w-150px">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                Komentar Akhir(Final Comments)
-                            </span>
-                        </td>
-                        <td>
-                            <textarea class="form-control" name="EmployeeComment"></textarea>
-                        </td>
-                        <td>
-                            <textarea class="form-control" name="ManagerComment"></textarea>
-                        </td>
-                        <td>
-                            <textarea class="form-control" name="SecondLevelManagerComment"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0 max-w-150px">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                Tanda Tangan (Signature)
-                            </span>
-                        </td>
-                        <td>
-                            <textarea class="form-control"></textarea>
-                        </td>
-                        <td>
-                            <textarea class="form-control"></textarea>
-                        </td>
-                        <td>
-                            <textarea class="form-control"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="pl-0 max-w-150px">
-                            <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                Tanda Tangan Persetujuan Penilaian Akhir (Year End Review Signature)
-                            </span>
-                        </td>
-                        <td>
-                            <textarea class="form-control"></textarea>
-                        </td>
-                        <td>
-                            <textarea class="form-control"></textarea>
-                        </td>
-                        <td>
-                            <textarea class="form-control"></textarea>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body py-0">
+            <!--begin::Table-->
+            <div class="table-responsive">
+                <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
+                    <tbody>
+                        <tr>
+                            <td class="pl-0 max-w-100px">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    Rencana Pengembangan Diri
+                                </span>
+                                <span class="text-muted">
+                                    Development Plan
+                                </span>
+                            </td>
+                            <td>
+                                <textarea class="form-control" name="DPPlan"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pl-0 max-w-100px">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    Metode yang digunakan
+                                </span>
+                                <span class="text-muted">
+                                    Methods
+                                </span>
+                            </td>
+                            <td>
+                                <textarea class="form-control" name="DPMethods"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pl-0 max-w-100px">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    Kelebihan Karyawan(Strength Area)
+                                </span>
+                                <span class="text-muted">
+                                    Informasi ini diberikan oleh atasan pada saat penilaian akhir (Information provided by manager in year-end review stage)
+                                </span>
+                            </td>
+                            <td>
+                                <textarea class="form-control" name="DPStrengthArea"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pl-0 max-w-100px">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    Area yang perlu dikembangkan (Development Area)
+                                </span>
+                                <span class="text-muted">
+                                    Informasi ini diberikan oleh atasan pada saat penilaian akhir (Information provided by manager in year-end review stage)
+                                </span>
+                            </td>
+                            <td>
+                                <textarea class="form-control" name="DPDevelopmentArea"></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--end::Table-->
         </div>
-        <!--end::Table-->
+        <!--end::Body-->
     </div>
-    <!--end::Body-->
-</div>
 
-<div class="row">
-    <div class="col-lg-6">
-        <button type="submit" class="btn btn-primary mr-2">Save</button>
-        <button type="reset" class="btn btn-danger">Clear</button>
+    <div class="card card-custom gutter-b">
+        <!--begin::Header-->
+        <div class="card-header border-0 py-5">
+            <h3 class="card-title align-items-start flex-column">
+                <span class="card-label font-weight-bolder text-dark">Komentar Akhir</span>
+                <span class="text-muted mt-3 font-weight-bold font-size-sm">Description here..</span>
+            </h3>
+
+        </div>
+        <!--end::Header-->
+        <!--begin::Body-->
+        <div class="card-body py-0">
+            <!--begin::Table-->
+            <div class="table-responsive">
+                <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
+                    <thead>
+                        <tr class="text-center">
+                            <th></th>
+                            <th>Karyawan(Employee)</th>
+                            <th>Atasan(Manager)</th>
+                            <th>Atasan dari atasan langsung (2nd Level Manager)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="pl-0 max-w-150px">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    Komentar Akhir(Final Comments)
+                                </span>
+                            </td>
+                            <td>
+                                <textarea class="form-control" name="EmployeeComment"></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control" name="ManagerComment"></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control" name="SecondLevelManagerComment"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pl-0 max-w-150px">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    Tanda Tangan (Signature)
+                                </span>
+                            </td>
+                            <td>
+                                <textarea class="form-control"></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control"></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pl-0 max-w-150px">
+                                <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
+                                    Tanda Tangan Persetujuan Penilaian Akhir (Year End Review Signature)
+                                </span>
+                            </td>
+                            <td>
+                                <textarea class="form-control"></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control"></textarea>
+                            </td>
+                            <td>
+                                <textarea class="form-control"></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--end::Table-->
+        </div>
+        <!--end::Body-->
     </div>
-</div>
+    <input type="hidden" name="submit" id="submitform" />
+    <div class="row">
+        <div class="col-lg-6">
+            <button type="submit" class="btn btn-primary mr-2">Save</button>
+            <button type="button" class="btn btn-warning" id="btnSubmit" onclick="SubForm(this);">Submit</button>
+        </div>
+    </div>
+}
+
+
 <script>
     //$(document).ready(function () {
     //    $(document).on("click", ".color-grey", function () {
 
     //    }
     //});
+    function SubForm(x) {
+        document.getElementById("submitform").value = true;
+        this.form.submit();
+    }
 
     function OnWeightChange(x) {
         var weight = parseInt(x.value);
+        var id = x.id.replace("weight", "");
+        var currentweight = $("#currentweight" + id).val();
         var labelTotalWeight = $("#totalweight")[0];
         var totalWeight = $("#totweight").val();
+        var employeeScore = $("#employeeScore" + id);
+        if (currentweight === "")
+            currentweight = 0;
+        else
+            currentweight = parseInt(currentweight);
         if (totalWeight === "")
             totalWeight = 0;
         else
             totalWeight = parseInt(totalWeight);
-        totalWeight = weight + totalWeight;
+        //totalWeight = weight + totalWeight;
+        totalWeight = totalWeight - currentweight;
+        totalWeight = totalWeight + weight;
+        if (totalWeight > 100) {
+            weight = currentweight;
+            x.value = currentweight;
+            alert("Total Weight Cannot More Than 100.");
+            return;
+        }
+        document.getElementById("currentweight" + id).value = weight;
         document.getElementById("totweight").value = totalWeight;
         labelTotalWeight.textContent = totalWeight;
+
+        if (employeeScore.val() != "")
+            OnScoreChange(employeeScore[0]);
+
     }
     function OnScoreChange(x) {
-        var id = x.id.replace("employeeScore","");
+        var id = x.id.replace("employeeScore", "");
         var score = parseInt(x.value);
         var labelNumericalScore = $("#numericalscore")[0];
         var weight = $("#weight" + id + "").val();
@@ -798,7 +854,7 @@
         if (rawscore > 0)
             bonumericalscore = bonumericalscore - rawscore;
 
-        rawscore = Number(score * (weight / 100)).toFixed(2);        
+        rawscore = Number(score * (weight / 100)).toFixed(2);
         document.getElementById("rawScore" + id).value = Number(rawscore).toFixed(2);
         bonumericalscore = Number(bonumericalscore) + Number(rawscore);
         document.getElementById("bonumericalscore").value = Number(bonumericalscore).toFixed(2);
@@ -814,5 +870,69 @@
 
         document.getElementById("descriptivescore").value = descriptivevalue;
         $("#descriptivescore")[0].textContent = descriptivevalue;
+
+        CalculateOverallScore();
+    }
+    function OnGBScoreChange(x) {
+        var id = x.id.replace("gbemployeescore", "");
+        var score = parseInt(x.value);
+        var labelNumericalScore = $("#totalgbscore")[0];
+        var weight = 25;
+        var gbrawscore = $("#gbrawscore" + id + "").val();
+        if (gbrawscore === "")
+            gbrawscore = 0;
+        else
+            gbrawscore = Number(gbrawscore);
+
+        var gbnumericalscore = $("#gbnumericalscore").val();
+        if (gbnumericalscore === "")
+            gbnumericalscore = 0;
+        else
+            gbnumericalscore = Number(gbnumericalscore);
+        if (gbrawscore > 0)
+            gbnumericalscore = gbnumericalscore - gbrawscore;
+
+        gbrawscore = Number(score * (weight / 100)).toFixed(2);
+        document.getElementById("gbrawscore" + id).value = Number(gbrawscore).toFixed(2);
+        gbnumericalscore = Number(gbnumericalscore) + Number(gbrawscore);
+        document.getElementById("gbnumericalscore").value = Number(gbnumericalscore).toFixed(2);
+        labelNumericalScore.textContent = Number(gbnumericalscore).toFixed(2);
+
+        var descriptivevalue = "";
+        if (gbnumericalscore >= 2.5)
+            descriptivevalue = "Exceeds Expectations";
+        else if (gbnumericalscore >= 1.69)
+            descriptivevalue = "Meets Expectations";
+        else
+            descriptivevalue = "Needs Improvements";
+
+        document.getElementById("gbdescriptivescore").value = descriptivevalue;
+        $("#gbdescscore")[0].textContent = descriptivevalue;
+
+        CalculateOverallScore();
+    }
+    function CalculateOverallScore() {
+        var gbnumericalscore = $("#gbnumericalscore").val();
+        var bonumericalscore = $("#bonumericalscore").val();
+        if (gbnumericalscore === "")
+            gbnumericalscore = 0;
+        else
+            gbnumericalscore = Number(gbnumericalscore);
+        if (bonumericalscore === "")
+            bonumericalscore = 0;
+        else
+            bonumericalscore = Number(bonumericalscore);
+        var overallscore = Number((gbnumericalscore * (50 / 100)) + (bonumericalscore * (50 / 100)));
+        var overalldescriptivescore = "";
+        if (overallscore >= 2.5)
+            overalldescriptivescore = "Exceeds Expectations";
+        else if (overallscore >= 1.69)
+            overalldescriptivescore = "Meets Expectations";
+        else
+            overalldescriptivescore = "Needs Improvements";
+        document.getElementById("overallnumericalscore").value = overallscore;
+        document.getElementById("overalldescriptivescore").value = overalldescriptivescore;
+        $("#labeldescriptiveoverallscore")[0].textContent = overalldescriptivescore;
+        $("#labelnumericoverallscore")[0].textContent = Number(overallscore);
     }
 </script>

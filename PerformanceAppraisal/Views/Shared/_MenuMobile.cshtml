@@ -1,30 +1,68 @@
 ﻿<ul class="header-tabs p-5 p-lg-0 d-flex d-lg-none nav nav-bold nav-tabs" role="tablist">
     <!--begin::Item-->
     <li class="nav-item mr-2">
-        <a href="#" class="nav-link btn btn-clean active" data-toggle="tab" data-target="#kt_header_tab_1" role="tab">
-            Home
-        </a>
+        @if (ViewBag.Controller == "Assessment")
+        {
+            <a href="#" class="nav-link btn btn-clean active" data-toggle="tab" data-target="#kt_header_tab_1" role="tab">
+                Home
+            </a>
+        }
+        else
+        {
+            <a href="#" class="nav-link btn btn-clean" data-toggle="tab" data-target="#kt_header_tab_1" role="tab">
+                Home
+            </a>
+        }
+
     </li>
     <!--end::Item-->
     <!--begin::Item-->
     <li class="nav-item mr-2">
-        <a href="#" class="nav-link btn btn-clean" data-toggle="tab" data-target="#kt_header_tab_2" role="tab">
-            Reports
-        </a>
+        @if (ViewBag.Controller == "Employee")
+        {
+            <a href="#" class="nav-link btn btn-clean active" data-toggle="tab" data-target="#kt_header_tab_2" role="tab">
+                Employee
+            </a>
+        }
+        else
+        {
+            <a href="#" class="nav-link btn btn-clean" data-toggle="tab" data-target="#kt_header_tab_2" role="tab">
+                Employee
+            </a>
+        }
+
     </li>
     <!--end::Item-->
     <!--begin::Item-->
     <li class="nav-item mr-2">
-        <a href="#" class="nav-link btn btn-clean" data-toggle="tab" data-target="#kt_header_tab_2" role="tab">
-            Orders
-        </a>
+        @if (ViewBag.Controller == "Department")
+        {
+            <a href="#" class="nav-link btn btn-clean active" data-toggle="tab" data-target="#kt_header_tab_3" role="tab">
+                Department
+            </a>
+        }
+        else
+        {
+            <a href="#" class="nav-link btn btn-clean" data-toggle="tab" data-target="#kt_header_tab_3" role="tab">
+                Department
+            </a>
+        }
     </li>
     <!--end::Item-->
     <!--begin::Item-->
     <li class="nav-item mr-2">
-        <a href="#" class="nav-link btn btn-clean" data-toggle="tab" data-target="#kt_header_tab_2" role="tab">
-            Help Ceter
-        </a>
+        @if (ViewBag.Controller == "Position")
+        {
+            <a href="#" class="nav-link btn btn-clean active" data-toggle="tab" data-target="#kt_header_tab_4" role="tab">
+                Position
+            </a>
+        }
+        else
+        {
+            <a href="#" class="nav-link btn btn-clean" data-toggle="tab" data-target="#kt_header_tab_4" role="tab">
+                Position
+            </a>
+        }
     </li>
     <!--end::Item-->
 </ul>
