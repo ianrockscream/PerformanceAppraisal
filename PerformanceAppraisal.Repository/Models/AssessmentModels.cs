@@ -12,16 +12,16 @@ namespace PerformanceAppraisal.Repository.Models
         public ICollection<string> BOGoals { get; set; }
         public ICollection<int> BOEmployeeScore { get; set; }
         public ICollection<int> BOManagerScore { get; set; }
-        public int BONumericalScore { get; set; }
+        public string BONumericalScore { get; set; }
         public string BODescriptiveScore { get; set; }
         public ICollection<int> GBWeight { get; set; }
         public ICollection<string> GBExpectedBehavior { get; set; }
         public ICollection<string> GBDemonstatedBehavior { get; set; }
         public ICollection<int> GBEmployeeScore { get; set; }
         public ICollection<int> GBManagerScore { get; set; }
-        public int GBNumericalScore { get; set; }
+        public string GBNumericalScore { get; set; }
         public string GBDescriptiveScore { get; set; }
-        public int OverallNumericalScore { get; set; }
+        public string OverallNumericalScore { get; set; }
         public string OverallDescriptiveScore { get; set; }
         public int MobilityStatusId { get; set; }
         public string MobilityStatusDesc { get; set; }

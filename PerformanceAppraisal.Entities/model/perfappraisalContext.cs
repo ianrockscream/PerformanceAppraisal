@@ -429,7 +429,11 @@ namespace PerformanceAppraisal.Entities.model
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.Bonumericscore).HasColumnName("bonumericscore");
+                entity.Property(e => e.Bonumericscore)
+                    .HasColumnName("bonumericscore")
+                    .HasColumnType("varchar(10)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.Careeraspirationcomment)
                     .HasColumnName("careeraspirationcomment")
@@ -455,7 +459,11 @@ namespace PerformanceAppraisal.Entities.model
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.Gbnumericscore).HasColumnName("gbnumericscore");
+                entity.Property(e => e.Gbnumericscore)
+                    .HasColumnName("gbnumericscore")
+                    .HasColumnType("varchar(10)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.Managercomment)
                     .HasColumnName("managercomment")
@@ -477,7 +485,11 @@ namespace PerformanceAppraisal.Entities.model
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.Overallnumericscore).HasColumnName("overallnumericscore");
+                entity.Property(e => e.Overallnumericscore)
+                    .HasColumnName("overallnumericscore")
+                    .HasColumnType("varchar(10)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.Statusid).HasColumnName("statusid");
 

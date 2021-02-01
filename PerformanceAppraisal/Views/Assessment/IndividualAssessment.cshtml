@@ -34,13 +34,13 @@
         </div>
         <div class="form-group row my-auto">
             <label class="col-xl-6 col-lg-6 col-form-label text-right font-weight-bold">Tanggal Pembuatan (Create Date) : </label>
-            <label class="col-xl-6 col-lg-6 d-none d-lg-block col-form-label">@DateTime.Now;</label>
+            <label class="col-xl-6 col-lg-6 d-none d-lg-block col-form-label">@DateTime.Now</label>
             <label class="col-xl-6 col-lg-6 d-sm-none col-form-label text-right">@DateTime.Now</label>
         </div>
     </div>
 </div>
 
-@using (Html.BeginForm("SaveFormAssessment", "Assessment", FormMethod.Post, new { @class = "form", enctype = "multipart/form-data" }))
+@using (Html.BeginForm("SaveFormAssessment", "Assessment", FormMethod.Post, new { @class = "form", id = "formAssessment", enctype = "multipart/form-data" }))
 {
     <div class="card card-custom gutter-b">
         <!--begin::Header-->
@@ -60,15 +60,15 @@
                     <thead>
                         <tr class="text-left">
                             <th class="pl-0" style="min-width:150px">Business Goals</th>
-                            <th class="pr-0" style="min-width: 80px">Weight(%)</th>
+                            <th class="pr-0" style="width:120px;">Weight(%)</th>
                             <th style="min-width: 200px">Goal Achievement</th>
-                            <th class="pr-0">Self Assessment</th>
+                            <th class="pr-0" style="width:200px;">Self Assessment</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td class="pl-0">
-                                <input type="text" class="form-control" name="BODescription" />
+                                <input type="text" class="form-control" maxlength="200" name="BODescription" />
                             </td>
                             <td>
                                 <input type="text" class="form-control" name="BOWeight" id="weight1" onblur="OnWeightChange(this);" />
@@ -76,7 +76,7 @@
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                    <input type="text" class="form-control" name="BOGoals" />
+                                    <input type="text" class="form-control" maxlength="200" name="BOGoals" />
                                 </span>
                             </td>
                             <td>
@@ -91,7 +91,7 @@
                         </tr>
                         <tr>
                             <td class="pl-0">
-                                <input type="text" class="form-control" name="BODescription" />
+                                <input type="text" class="form-control" maxlength="200" name="BODescription" />
                             </td>
                             <td>
                                 <input type="text" class="form-control" name="BOWeight" id="weight2" onblur="OnWeightChange(this);" />
@@ -99,7 +99,7 @@
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                    <input type="text" class="form-control" name="BOGoals" />
+                                    <input type="text" class="form-control" maxlength="200" name="BOGoals" />
                                 </span>
                             </td>
                             <td>
@@ -114,7 +114,7 @@
                         </tr>
                         <tr>
                             <td class="pl-0">
-                                <input type="text" class="form-control" name="BODescription" />
+                                <input type="text" class="form-control" maxlength="200" name="BODescription" />
                             </td>
                             <td>
                                 <input type="text" class="form-control" name="BOWeight" id="weight3" onblur="OnWeightChange(this);" />
@@ -122,7 +122,7 @@
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                    <input type="text" class="form-control" name="BOGoals" />
+                                    <input type="text" class="form-control" maxlength="200" name="BOGoals" />
                                 </span>
                             </td>
                             <td>
@@ -137,7 +137,7 @@
                         </tr>
                         <tr>
                             <td class="pl-0">
-                                <input type="text" class="form-control" name="BODescription" />
+                                <input type="text" class="form-control" maxlength="200" name="BODescription" />
                             </td>
                             <td>
                                 <input type="text" class="form-control" name="BOWeight" id="weight4" onblur="OnWeightChange(this);" />
@@ -145,7 +145,7 @@
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                    <input type="text" class="form-control" name="BOGoals" />
+                                    <input type="text" class="form-control" maxlength="200" name="BOGoals" />
                                 </span>
                             </td>
                             <td>
@@ -160,7 +160,7 @@
                         </tr>
                         <tr>
                             <td class="pl-0">
-                                <input type="text" class="form-control" name="BODescription" />
+                                <input type="text" class="form-control" maxlength="200" name="BODescription" />
                             </td>
                             <td>
                                 <input type="text" class="form-control" name="BOWeight" id="weight5" onblur="OnWeightChange(this);" />
@@ -168,7 +168,7 @@
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                    <input type="text" class="form-control" name="BOGoals" />
+                                    <input type="text" class="form-control" maxlength="200" name="BOGoals" />
                                 </span>
                             </td>
                             <td>
@@ -244,11 +244,11 @@
                 <table class="table table-head-custom table-vertical-center" id="kt_advance_table_widget_1">
                     <thead>
                         <tr class="text-left">
-                            <th class="pl-0" style="min-width:150px">Global Attitudes</th>
-                            <th class="pr-0" style="min-width: 80px">Weight(%)</th>
+                            <th class="pl-0" style="width:330px">Global Attitudes</th>
+                            <th class="pr-0" style="width:100px">Weight(%)</th>
                             <th style="min-width: 200px">Expected Behavior</th>
                             <th style="min-width: 200px">Demonstrated Behavior</th>
-                            <th class="pr-0">Self Assessment</th>
+                            <th class="pr-0" style="width:200px;">Self Assessment</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -257,23 +257,23 @@
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
                                     Simple
                                 </span>
-                                <span class="text-muted">
+                                <span class="text-muted text-justify">
                                     Mencari cara untuk membuat pekerjaan menjadi lebih sederhana dan efisien
                                 </span>
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                    <input type="number" class="form-control disabled" value="25" />
+                                    <input type="number" class="form-control disabled" readonly value="25" />
                                 </span>
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                    <input type="text" class="form-control" name="GBExpectedBehavior" />
+                                    <input type="text" class="form-control" maxlength="200" name="GBExpectedBehavior" />
                                 </span>
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                    <input type="text" class="form-control" name="GBDemonstratedBehavior" />
+                                    <input type="text" class="form-control" maxlength="200" name="GBDemonstratedBehavior" />
                                 </span>
                             </td>
                             <td>
@@ -291,23 +291,23 @@
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
                                     Be Bold
                                 </span>
-                                <span class="text-muted">
+                                <span class="text-muted text-justify">
                                     Membuat suatu hal terjadi, dari ide menjadi tindakan nyata dan mampu membuat keputusan dengan cepat dengan memperhitungkan resikonya
                                 </span>
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                    <input type="number" class="form-control disabled" value="25" />
+                                    <input type="number" class="form-control" readonly value="25" />
                                 </span>
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                    <input type="text" class="form-control" name="GBExpectedBehavior" />
+                                    <input type="text" class="form-control" maxlength="200" name="GBExpectedBehavior" />
                                 </span>
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                    <input type="text" class="form-control" name="GBDemonstratedBehavior" />
+                                    <input type="text" class="form-control" maxlength="200" name="GBDemonstratedBehavior" />
                                 </span>
                             </td>
                             <td>
@@ -325,23 +325,23 @@
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
                                     Be Dependable
                                 </span>
-                                <span class="text-muted">
+                                <span class="text-muted text-justify">
                                     Memahami tanggung jawab dengan baik, jujur dengan performa dan terbuka dalam memberikan umpan balik kepada sesama rekan kerja
                                 </span>
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                    <input type="number" class="form-control disabled" value="25" />
+                                    <input type="number" class="form-control disabled" readonly value="25" />
                                 </span>
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                    <input type="text" class="form-control" name="GBExpectedBehavior" />
+                                    <input type="text" class="form-control" maxlength="200" name="GBExpectedBehavior" />
                                 </span>
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                    <input type="text" class="form-control" name="GBDemonstratedBehavior" />
+                                    <input type="text" class="form-control" maxlength="200" name="GBDemonstratedBehavior" />
                                 </span>
                             </td>
                             <td>
@@ -359,23 +359,23 @@
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
                                     One Voice
                                 </span>
-                                <span class="text-muted">
+                                <span class="text-muted text-justify">
                                     Memiliki pola pikir "One VOICE" yang mau berkolaborasi, menghargai perbedaan dalam tim dan mau mendengar sesama rekan kerja
                                 </span>
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                    <input type="number" class="form-control disabled" value="25" />
+                                    <input type="number" class="form-control disabled" readonly value="25" />
                                 </span>
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                    <input type="text" class="form-control" name="GBExpectedBehavior" />
+                                    <input type="text" class="form-control" maxlength="200" name="GBExpectedBehavior" />
                                 </span>
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg">
-                                    <input type="text" class="form-control" name="GBDemonstratedBehavior" />
+                                    <input type="text" class="form-control" maxlength="200" name="GBDemonstratedBehavior" />
                                 </span>
                             </td>
                             <td>
@@ -781,7 +781,7 @@
     <input type="hidden" name="submit" id="submitform" />
     <div class="row">
         <div class="col-lg-6">
-            <button type="submit" class="btn btn-primary mr-2">Save</button>
+            <button type="submit" class="btn btn-primary mr-2" id="savebtn">Save</button>
             <button type="button" class="btn btn-warning" id="btnSubmit" onclick="SubForm(this);">Submit</button>
         </div>
     </div>
@@ -796,11 +796,14 @@
     //});
     function SubForm(x) {
         document.getElementById("submitform").value = true;
-        this.form.submit();
+        document.getElementById("savebtn").click();
     }
 
     function OnWeightChange(x) {
-        var weight = parseInt(x.value);
+        var initvalue = x.value;
+        if (initvalue === "")
+            initvalue = 0;
+        var weight = parseInt(initvalue);
         var id = x.id.replace("weight", "");
         var currentweight = $("#currentweight" + id).val();
         var labelTotalWeight = $("#totalweight")[0];
@@ -870,6 +873,7 @@
 
         document.getElementById("descriptivescore").value = descriptivevalue;
         $("#descriptivescore")[0].textContent = descriptivevalue;
+        document.getElementById("bodescriptivescore").value = descriptivevalue;
 
         CalculateOverallScore();
     }

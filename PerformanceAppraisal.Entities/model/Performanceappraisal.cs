@@ -15,11 +15,11 @@ namespace PerformanceAppraisal.Entities.model
 
         public long Id { get; set; }
         public int Employeeid { get; set; }
-        public int? Bonumericscore { get; set; }
+        public string Bonumericscore { get; set; }
         public string Bodescriptivescore { get; set; }
-        public int? Gbnumericscore { get; set; }
+        public string Gbnumericscore { get; set; }
         public string Gbdescriptivescore { get; set; }
-        public int? Overallnumericscore { get; set; }
+        public string Overallnumericscore { get; set; }
         public string Overalldescriptivescore { get; set; }
         public int? MobilityId { get; set; }
         public string Mobilitydesc { get; set; }

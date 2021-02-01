@@ -68,6 +68,27 @@ namespace PerformanceAppraisal.Repository.Repo
             perfApp.Gbdescriptivescore = model.GBDescriptiveScore;
             perfApp.Gbnumericscore = model.GBNumericalScore;
             perfApp.Managercomment = model.ManagerComment;
+            if(model.submit)
+            {
+                Statuscode status = _context.Statuscode.FirstOrDefault(x => x.Description == "SUBMITTED");
+                if (status != null)
+                {
+                    perfApp.Status = status;
+                    perfApp.Statusid = status.Id;
+                }
+                else
+                {
+                    status = _context.Statuscode.FirstOrDefault(x => x.Description == "PROGRESS");
+                    perfApp.Status = status;
+                    perfApp.Statusid = status.Id;
+                }
+            }
+            else
+            {
+                Statuscode status = _context.Statuscode.FirstOrDefault(x => x.Description == "PROGRESS");
+                perfApp.Status = status;
+                perfApp.Statusid = status.Id;
+            }
             if (!string.IsNullOrEmpty(model.MobilityStatusDesc))
             {
                 mobility = _context.Mobilitycode.FirstOrDefault(x => x.Id == 2);

@@ -36,6 +36,16 @@ namespace PerformanceAppraisal.Controllers
         [HttpPost]
         public IActionResult SaveFormAssessment(AssessmentModels model)
         {
+            AssessmentRepository repo = new AssessmentRepository();
+            try
+            {
+                model.EmployeeId = Convert.ToInt32(ViewBag.employeeId);
+                repo.CreateAssessment(model);
+            }
+            catch(Exception e)
+            {
+
+            }
             return View();
         }
         public IActionResult SuperiorAssessment()
