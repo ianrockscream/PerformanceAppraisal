@@ -48,6 +48,8 @@ namespace PerformanceAppraisal.Controllers
                     }
                     model.BODescriptiveScore = assessment.Bodescriptivescore;
                     model.BONumericalScore = assessment.Bonumericscore;
+                    model.GBNumericalScore = assessment.Gbnumericscore;
+                    model.GBDescriptiveScore = assessment.Gbdescriptivescore;
                     model.CareerAspirationComment = assessment.Careeraspirationcomment;
                     foreach(var item in assessment.Developmentplan)
                     {

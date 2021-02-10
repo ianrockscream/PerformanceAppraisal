@@ -796,11 +796,11 @@
                                 <span id="totalgbscore" class="text-dark-75 font-weight-bolder d-block font-size-lg text-right">
                                     @if(!string.IsNullOrEmpty(Model.GBNumericalScore))
                                     {
-                                        Html.Raw(Model.GBNumericalScore);
+                                        @Html.Raw(Model.GBNumericalScore);
                                     }
                                     else
                                     {
-                                        Html.Raw("0");
+                                        @Html.Raw("0");
                                     }
                                 </span>
                                 <input type="hidden" name="GBNumericalScore" id="gbnumericalscore" value="@Model.GBNumericalScore" />
@@ -809,11 +809,11 @@
                                 <span id="gbdescscore" class="text-dark-75 font-weight-bolder d-block font-size-lg text-right">
                                     @if (!string.IsNullOrEmpty(Model.GBDescriptiveScore))
                                     {
-                                        Html.Raw(Model.GBDescriptiveScore);
+                                        @Html.Raw(Model.GBDescriptiveScore);
                                     }
                                     else
                                     {
-                                        Html.Raw("-");
+                                        @Html.Raw("-");
                                     }
                                 </span>
                                 <input type="hidden" name="GBDescriptiveScore" id="gbdescriptivescore" value="@Model.GBDescriptiveScore" />
@@ -852,9 +852,18 @@
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                    <span id="labelnumericoverallscore">0</span>
+                                    <span id="labelnumericoverallscore">
+                                        @if(!string.IsNullOrEmpty(Model.OverallNumericalScore))
+                                        {
+                                            @Html.Raw(Model.OverallNumericalScore);
+                                        }
+                                        else
+                                        {
+                                            @Html.Raw("0");
+                                        }
+                                    </span>
                                 </span>
-                                <input type="hidden" name="OverallNumericalScore" id="overallnumericalscore" />
+                                <input type="hidden" name="OverallNumericalScore" id="overallnumericalscore" value="@Model.OverallNumericalScore" />
                             </td>
                         </tr>
                         <tr>
@@ -865,9 +874,18 @@
                             </td>
                             <td>
                                 <span class="text-dark-75 font-weight-bolder d-block font-size-lg text-center">
-                                    <span id="labeldescriptiveoverallscore">-</span>
+                                    <span id="labeldescriptiveoverallscore">
+                                        @if (!string.IsNullOrEmpty(Model.OverallDescriptiveScore))
+                                        {
+                                            @Html.Raw(Model.OverallDescriptiveScore);
+                                        }
+                                        else
+                                        {
+                                            @Html.Raw("-");
+                                        }
+                                    </span>
                                 </span>
-                                <input type="hidden" name="OverallDescriptiveScore" id="overalldescriptivescore" />
+                                <input type="hidden" name="OverallDescriptiveScore" id="overalldescriptivescore" value="@Model.OverallDescriptiveScore" />
                             </td>
                         </tr>
                     </tbody>
@@ -905,24 +923,34 @@
                             <td class="px-40">
                                 <div class="radio-inline px-20">
                                     <label class="radio radio-solid">
-                                        <input type="radio" name="MobilityStatusId" checked="checked" value="1" />
+                                        @if (Model.MobilityStatusId != 0 && Model.MobilityStatusId == 1)
+                                        {
+                                            <input type="radio" name="MobilityStatusId" checked="checked" value="1" />
+                                        }
+                                        else
+                                        {
+                                            <input type="radio" name="MobilityStatusId" value="1" />
+                                        }
                                         <span></span>
                                     </label>
                                 </div>
                             </td>
                             <td class="px-40">
                                 <div class="radio-inline pl-20">
-                                    @*<label class="radio radio-solid">
-                                            <input type="radio" name="rbt9" checked="checked" value="1" />
-                                            <span></span>
-                                        </label>*@
-                                    <input type="text" name="MobilityStatusDesc" class="form-control" />
+                                    <input type="text" name="MobilityStatusDesc" class="form-control" value="@Model.MobilityStatusDesc" />
                                 </div>
                             </td>
                             <td class="px-40">
                                 <div class="radio-inline pl-10">
                                     <label class="radio radio-solid">
-                                        <input type="radio" name="MobilityStatusId" checked="checked" value="3" />
+                                        @if (Model.MobilityStatusId != 0 && Model.MobilityStatusId == 3)
+                                        {
+                                            <input type="radio" name="MobilityStatusId" checked="checked" value="3" />
+                                        }
+                                        else
+                                        {
+                                            <input type="radio" name="MobilityStatusId" value="3" />
+                                        }
                                         <span></span>
                                     </label>
                                 </div>
@@ -1005,7 +1033,7 @@
                                 </select>
                             </td>
                             <td>
-                                <textarea class="form-control" name="CareerAspirationComment"></textarea>
+                                <textarea class="form-control" name="CareerAspirationComment">@Model.CareerAspirationComment</textarea>
                             </td>
                         </tr>
                     </tbody>
@@ -1042,7 +1070,7 @@
                                 </span>
                             </td>
                             <td>
-                                <textarea class="form-control" name="DPPlan"></textarea>
+                                <textarea class="form-control" name="DPPlan">@Model.DPPlan</textarea>
                             </td>
                         </tr>
                         <tr>
@@ -1055,7 +1083,7 @@
                                 </span>
                             </td>
                             <td>
-                                <textarea class="form-control" name="DPMethods"></textarea>
+                                <textarea class="form-control" name="DPMethods">@Model.DPMethods</textarea>
                             </td>
                         </tr>
                         <tr>
@@ -1068,7 +1096,7 @@
                                 </span>
                             </td>
                             <td>
-                                <textarea class="form-control" name="DPStrengthArea"></textarea>
+                                <textarea class="form-control" name="DPStrengthArea">@Model.DPStrengthArea</textarea>
                             </td>
                         </tr>
                         <tr>
@@ -1081,7 +1109,7 @@
                                 </span>
                             </td>
                             <td>
-                                <textarea class="form-control" name="DPDevelopmentArea"></textarea>
+                                <textarea class="form-control" name="DPDevelopmentArea">@Model.DPDevelopmentArea</textarea>
                             </td>
                         </tr>
                     </tbody>
@@ -1123,13 +1151,13 @@
                                 </span>
                             </td>
                             <td>
-                                <textarea class="form-control" name="EmployeeComment"></textarea>
+                                <textarea class="form-control" name="EmployeeComment">@Model.EmployeeComment</textarea>
                             </td>
                             <td>
-                                <textarea class="form-control" name="ManagerComment"></textarea>
+                                <textarea class="form-control" name="ManagerComment">@Model.ManagerComment</textarea>
                             </td>
                             <td>
-                                <textarea class="form-control" name="SecondLevelManagerComment"></textarea>
+                                <textarea class="form-control" name="SecondLevelManagerComment">@Model.SecondLevelManagerComment</textarea>
                             </td>
                         </tr>
                         <tr>
@@ -1331,5 +1359,11 @@
         document.getElementById("overalldescriptivescore").value = overalldescriptivescore;
         $("#labeldescriptiveoverallscore")[0].textContent = overalldescriptivescore;
         $("#labelnumericoverallscore")[0].textContent = Number(overallscore);
+    }
+    function CalculateWeightOnLoad() {
+
+    }
+    window.onload = function () {
+        CalculateOverallScore();
     }
 </script>
