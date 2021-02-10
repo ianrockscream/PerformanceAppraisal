@@ -106,14 +106,16 @@ namespace PerformanceAppraisal.Repository.Repo
             //this.SaveChange();
 
             List<Businessobjective> BOList = new List<Businessobjective>();
-            for(int i = 0; i<= model.BODescription.Count; i++)
+            for(int i = 0; i< model.BODescription.Count; i++)
             {
                 Businessobjective bo = new Businessobjective();
                 bo.Description = model.BODescription.ElementAt(i);
-                bo.Employeescore = string.IsNullOrEmpty(model.BOEmployeeScore.ElementAt(i).ToString()) ? 0 : model.BOEmployeeScore.ElementAt(i);
-                bo.Goalachievement = string.IsNullOrEmpty(model.BOGoals.ElementAt(i)) ? "" : model.BOGoals.ElementAt(i);
+                bo.Employeescore = string.IsNullOrEmpty(model.BOEmployeeScore.ElementAt(i).ToString()) ? null : model.BOEmployeeScore.ElementAt(i);
+                bo.Goalachievement = string.IsNullOrEmpty(model.BOGoals.ElementAt(i)) ? null : model.BOGoals.ElementAt(i);
                 bo.Weight = string.IsNullOrEmpty(model.BOWeight.ElementAt(i).ToString()) ? 0 : model.BOWeight.ElementAt(i);
                 //bo.Performanceappraisalid = perfApp.Id;
+                if(perfApp.Status.Description == "PROCESS")
+                    bo.Managerscore = string.IsNullOrEmpty(model.BOManagerScore.ElementAt(i)) ? null : model.BOManagerScore.ElementAt(i);
                 bo.Performanceappraisal = perfApp;
                 BOList.Add(bo);
                 perfApp.Businessobjective.Add(bo);
@@ -122,14 +124,15 @@ namespace PerformanceAppraisal.Repository.Repo
             //this.SaveChange();
 
             List<Globalbehavior> GBList = new List<Globalbehavior>();
-            for (int i = 0; i <= model.GBExpectedBehavior.Count; i++)
+            for (int i = 0; i < model.GBExpectedBehavior.Count; i++)
             {
                 Globalbehavior gb = new Globalbehavior();
                 gb.Createdate = DateTime.Now;
                 gb.Demonstratedbehavior = string.IsNullOrEmpty(model.GBDemonstatedBehavior.ElementAt(i)) ? "" : model.GBDemonstatedBehavior.ElementAt(i);
-                gb.Employeescore = string.IsNullOrEmpty(model.GBEmployeeScore.ElementAt(i).ToString()) ? 0 : model.GBEmployeeScore.ElementAt(i);
+                gb.Employeescore = string.IsNullOrEmpty(model.GBEmployeeScore.ElementAt(i).ToString()) ? null : model.GBEmployeeScore.ElementAt(i);
                 gb.Expectedbehavior = string.IsNullOrEmpty(model.GBExpectedBehavior.ElementAt(i)) ? "" : model.GBExpectedBehavior.ElementAt(i);
-                gb.Managerscore = string.IsNullOrEmpty(model.GBManagerScore.ElementAt(i).ToString()) ? 0 : model.GBManagerScore.ElementAt(i);
+                if (perfApp.Status.Description == "PROCESS")
+                    gb.Managerscore = string.IsNullOrEmpty(model.GBManagerScore.ElementAt(i).ToString()) ? null : model.GBManagerScore.ElementAt(i);
                 gb.Performanceappraisal = perfApp;
                 //gb.Performanceappraisalid = perfApp.Id;
                 GBList.Add(gb);

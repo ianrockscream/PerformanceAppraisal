@@ -360,7 +360,11 @@ namespace PerformanceAppraisal.Entities.model
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.Employeescore).HasColumnName("employeescore");
+                entity.Property(e => e.Employeescore)
+                    .HasColumnName("employeescore")
+                    .HasColumnType("varchar(10)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.Expectedbehavior)
                     .IsRequired()
@@ -369,7 +373,11 @@ namespace PerformanceAppraisal.Entities.model
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_0900_ai_ci");
 
-                entity.Property(e => e.Managerscore).HasColumnName("managerscore");
+                entity.Property(e => e.Managerscore)
+                    .HasColumnName("managerscore")
+                    .HasColumnType("varchar(10)")
+                    .HasCharSet("utf8mb4")
+                    .HasCollation("utf8mb4_0900_ai_ci");
 
                 entity.Property(e => e.Performanceappraisalid).HasColumnName("performanceappraisalid");
 

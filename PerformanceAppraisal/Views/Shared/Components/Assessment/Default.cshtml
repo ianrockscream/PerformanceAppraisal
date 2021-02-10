@@ -1,0 +1,62 @@
+﻿@using X.PagedList.Mvc.Core;
+@model X.PagedList.IPagedList<PerformanceAppraisal.Entities.model.Performanceappraisal>
+<table class="datatable datatable-bordered datatable-head-custom" id="kt_datatable">
+    <thead>
+        <tr role="row">
+            <th title="Field #1">Document Id</th>
+            <th title="Field #2">Employee Name</th>
+            <th title="Field #4">Document Year</th>
+            <th title="Field #6">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ int row = Model.Count; int rowCount = 0;}
+        @foreach (var item in Model)
+        {
+            if (rowCount % 2 == 0)
+            {
+                <tr role="row" class="odd">
+                    <td>@item.Id</td>
+                    <td>@item.Employee.Name</td>
+                    <td>@item.Createdate.Value.Year</td>
+                    <td nowrap>
+                        <a href="@Url.Action("IndividualAssessment","Assessment", new { DocumentId = item.Id})" class="btn btn-sm btn-clean btn-icon" title="Edit details">
+                            <i class="la la-edit"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+            else
+            {
+    <tr role="row" class="even">
+        <td>@item.Id</td>
+        <td>@item.Employee.Name</td>
+        <td>@item.Createdate.Value.Year</td>
+        <td nowrap>
+            <a href="@Url.Action("IndividualAssessment","Assessment", new { DocumentId = item.Id})" class="btn btn-sm btn-clean btn-icon" title="Edit details">
+                <i class="la la-edit"></i>
+            </a>
+        </td>
+    </tr>
+            }
+            { rowCount++; }
+        }
+    </tbody>
+</table>
+
+<script src="~/assets/js/pages/crud/ktdatatable/base/html-table.js?v=7.0.6"></script>
+<script>
+
+    $('.pagination').on('click', 'a', function () {
+        $.ajax({
+            url: this.href,
+            type: 'GET',
+            cache: false,
+            success: function (result) {
+                $('#participanttGrid').html(result);
+                //bind();
+            }
+        });
+        return false;
+    });
+</script>

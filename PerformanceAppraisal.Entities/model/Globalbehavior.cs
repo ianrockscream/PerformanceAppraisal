@@ -9,8 +9,8 @@ namespace PerformanceAppraisal.Entities.model
         public long Performanceappraisalid { get; set; }
         public string Expectedbehavior { get; set; }
         public string Demonstratedbehavior { get; set; }
-        public int? Employeescore { get; set; }
-        public int? Managerscore { get; set; }
+        public string Employeescore { get; set; }
+        public string Managerscore { get; set; }
         public DateTime? Createdate { get; set; }
 
         public virtual Performanceappraisal Performanceappraisal { get; set; }
