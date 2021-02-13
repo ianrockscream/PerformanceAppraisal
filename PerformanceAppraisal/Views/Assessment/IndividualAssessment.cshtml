@@ -1216,8 +1216,14 @@
     //    }
     //});
     function SubForm(x) {
-        document.getElementById("submitform").value = true;
-        document.getElementById("savebtn").click();
+        var confirmSubmit = confirm("Apakah anda yakin telah mengisi form dengan benar?");
+
+        if (confirmSubmit) {
+            document.getElementById("submitform").value = true;
+            document.getElementById("savebtn").click();
+        } else {
+            return;
+        }
     }
 
     function OnWeightChange(x) {
@@ -1363,7 +1369,25 @@
     function CalculateWeightOnLoad() {
 
     }
-    window.onload = function () {
-        CalculateOverallScore();
+
+    window.addEventListener("load", calcWeight)
+
+    function calcWeight() {
+        var weights = $('input[name*="BOWeight"]');
+        var sum = 0;
+        //weights.forEach(calculateWeight);
+
+        for (let i = 0; i < weights.length; ++i) {
+            sum += Number(weights[i].value);
+        }
+
+        document.getElementById("totweight").value = sum;
+        $("#totalweight")[0].textContent = sum;
     }
+
+    function calculateWeight(item) {
+        sum += item;
+        document.getElementById("totweight").value = sum;
+    }
+
 </script>
